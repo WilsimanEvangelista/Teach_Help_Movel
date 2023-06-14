@@ -3,4 +3,6 @@
     <string name="btnLogin">Entrar</string>
     <string name="etEmail">E-mail:</string>
     <string name="etSenha">Senha:</string>
+    <string name="btnRecSenha">Enviar Código</string>
+    <string name="btnVoltar">Voltar</string>
 </resources>
