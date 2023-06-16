@@ -38,10 +38,10 @@ public class LoginActivity extends AppCompatActivity {
                         })
                         .setNegativeButton(R.string.btnVoltar, new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
-                                LoginDialogFragment.this.getDialog().cancel();
+                                //LoginDialogFragment.this.getDialog().cancel();
                             }
                         });
-                return builder.create();
+               // return builder.create();
 
             }
         });
