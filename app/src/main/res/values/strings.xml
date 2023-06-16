@@ -5,4 +5,6 @@
     <string name="etSenha">Senha:</string>
     <string name="btnRecSenha">Enviar Código</string>
     <string name="btnVoltar">Voltar</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
