@@ -15,7 +15,7 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".Perfil_UsuarioActivity"
+            android:name=".PerfilUsuarioActivity"
             android:exported="false" />
         <activity
             android:name=".perfil_usuarioActivity"
