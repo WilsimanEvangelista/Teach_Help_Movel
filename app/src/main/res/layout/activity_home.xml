@@ -10,7 +10,7 @@
         android:id="@+id/bottomNavigationView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#FFFFFF"
+        android:background="#5de0e6"
         android:clickable="true"
         app:itemHorizontalTranslationEnabled="false"
         app:itemIconSize="40dp"
