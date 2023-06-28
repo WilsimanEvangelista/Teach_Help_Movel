@@ -63,7 +63,7 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEnderecoProf" />
 
     <Button
-        android:id="@+id/btnBaixarCurriculo"
+        android:id="@+id/btnEditarPerfil"
         android:layout_width="216dp"
         android:layout_height="52dp"
         android:layout_marginStart="8dp"
@@ -94,7 +94,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnBaixarCurriculo" />
+        app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil" />
 
     <TextView
         android:id="@+id/tvDiaSemana"
