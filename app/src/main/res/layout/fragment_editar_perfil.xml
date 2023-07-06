@@ -7,6 +7,15 @@
     android:background="#FF000000"
     tools:context=".CadastroActivity">
 
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="43dp"
+        android:layout_height="38dp"
+        android:tint="#FFFFFF"
+        app:srcCompat="@android:drawable/ic_input_add"
+        tools:layout_editor_absoluteX="336dp"
+        tools:layout_editor_absoluteY="584dp" />
+
     <EditText
         android:id="@+id/etNome"
         android:layout_width="0dp"
@@ -225,7 +234,7 @@
         tools:layout_editor_absoluteY="600dp" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName3"
+        android:id="@+id/etDescrição"
         android:layout_width="366dp"
         android:layout_height="61dp"
         android:layout_marginStart="24dp"
