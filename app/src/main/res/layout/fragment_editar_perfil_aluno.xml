@@ -7,15 +7,6 @@
     android:background="#FF000000"
     tools:context=".CadastroActivity">
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="43dp"
-        android:layout_height="38dp"
-        android:tint="#FFFFFF"
-        app:srcCompat="@android:drawable/ic_input_add"
-        tools:layout_editor_absoluteX="336dp"
-        tools:layout_editor_absoluteY="584dp" />
-
     <EditText
         android:id="@+id/etNome"
         android:layout_width="0dp"
@@ -129,41 +120,6 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="548dp" />
 
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip3"
-        android:layout_width="97dp"
-        android:layout_height="37dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        android:text="Física"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        app:layout_constraintEnd_toStartOf="@+id/chip4"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/chip2"
-        tools:layout_editor_absoluteY="586dp" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip4"
-        android:layout_width="97dp"
-        android:layout_height="37dp"
-        android:text="Inglês"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        tools:layout_editor_absoluteX="232dp"
-        tools:layout_editor_absoluteY="586dp" />
-
-    <com.google.android.material.chip.Chip
-        android:id="@+id/chip2"
-        android:layout_width="96dp"
-        android:layout_height="36dp"
-        android:layout_marginStart="24dp"
-        android:text="Matemática"
-        android:textAlignment="center"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="586dp" />
-
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="128dp"
@@ -179,6 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="50dp"
         android:layout_marginBottom="32dp"
         android:backgroundTint="#5de0e6"
@@ -186,7 +143,8 @@
         android:textColor="#FF000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rvMaterias" />
 
     <EditText
         android:id="@+id/etSenha"
@@ -252,5 +210,25 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etSenha"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvMaterias"
+        android:layout_width="365dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
+    <ImageButton
+        android:id="@+id/imbAddAreas"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/roundcorner"
+        app:srcCompat="@drawable/baseline_add_24"
+        tools:layout_editor_absoluteX="355dp"
+        tools:layout_editor_absoluteY="545dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

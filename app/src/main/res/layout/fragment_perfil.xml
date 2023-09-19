@@ -141,4 +141,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvHorario2" />
 
+    <ImageView
+        android:id="@+id/imageView13"
+        android:layout_width="29dp"
+        android:layout_height="29dp"
+        android:src="@drawable/baseline_favorite_border_24"
+        app:layout_constraintBottom_toTopOf="@+id/tvEnderecoProf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintStart_toEndOf="@+id/tvNomeProf"
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoProf"
+        app:layout_constraintVertical_bias="0.608" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -121,124 +121,30 @@
         android:layout_marginStart="32dp"
         android:text="Instrutores favoritos:"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button4"
-        app:layout_constraintVertical_bias="0.51" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="77dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:text="Física"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:cornerRadius="24dp"
-        app:layout_constraintStart_toEndOf="@+id/button4"
-        tools:layout_editor_absoluteY="333dp" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/floatingActionButton2"
-        android:layout_width="28dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="32dp"
-        android:clickable="true"
-        android:src="@android:drawable/ic_input_add"
-        app:backgroundTint="#FFFFFF"
-        app:fabCustomSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        tools:layout_editor_absoluteY="324dp" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="111dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:text="Matemática"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:cornerRadius="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/button6"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView8" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="77dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:backgroundTint="#FFFFFF"
-        android:clickable="false"
-        android:contextClickable="false"
-        android:text="Música"
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:cornerRadius="24dp"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        tools:layout_editor_absoluteY="333dp" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView6"
-        tools:layout_editor_absoluteY="403dp"
-        tools:src="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="403dp"
-        tools:src="@tools:sample/avatars" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        tools:layout_editor_absoluteY="403dp"
-        tools:src="@tools:sample/avatars" />
+        tools:layout_editor_absoluteY="365dp" />
 
     <ImageView
         android:id="@+id/imageView9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="12dp"
         android:src="@android:drawable/stat_sys_phone_call"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
+        tools:layout_editor_absoluteY="543dp" />
 
     <TextView
         android:id="@+id/tvTelAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="12dp"
         android:text="(27) 985446812"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/tvEmailAluno"
-        app:layout_constraintStart_toEndOf="@+id/imageView9"
-        app:layout_constraintTop_toBottomOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/imageView9" />
 
     <TextView
         android:id="@+id/tvEmailAluno"
@@ -260,5 +166,38 @@
         android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="392dp"
+        android:layout_height="143dp"
+        app:layout_constraintBottom_toTopOf="@+id/imageView9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="348dp"
+        android:layout_height="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="23dp"
+        android:layout_height="23dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="5dp"
+        android:background="@drawable/roundcorner"
+        android:src="@drawable/roundcorner"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.897"
+        app:layout_constraintStart_toEndOf="@+id/textView8"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescAluno"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/baseline_add_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
