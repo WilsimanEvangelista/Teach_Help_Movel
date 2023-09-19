@@ -2,7 +2,8 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:icon="@mipmap/perfil_icon" />
-    <item android:icon="@mipmap/house_icon" />
-    <item android:icon="@mipmap/coracao" />
+    <item android:icon="@drawable/baseline_person_24" />
+    <item android:icon="@drawable/baseline_search_24" />
+    <item android:icon="@drawable/baseline_favorite_24" />
+    <item android:icon="@drawable/baseline_home_24" />
 </menu>
