@@ -18,7 +18,7 @@
             android:name=".perfil_usuarioActivity"
             android:exported="false" />
         <activity
-            android:name=".areas"
+            android:name=".Areas"
             android:exported="false" />
         <activity
             android:theme="@style/Theme.TeachHelp.NoActionBar"

@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class areas extends AppCompatActivity {
+public class Areas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
