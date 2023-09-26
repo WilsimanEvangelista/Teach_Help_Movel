@@ -4,11 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-public class areas extends AppCompatActivity {
+public class PerfilInstrutorActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_areas);
+        setContentView(R.layout.activity_perfil_instrutor);
     }
 }

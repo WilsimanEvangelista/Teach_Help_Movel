@@ -10,10 +10,10 @@ import android.view.ViewGroup;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link editarPerfil#newInstance} factory method to
+ * Use the {@link ListMenu#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class editarPerfil extends Fragment {
+public class ListMenu extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +24,7 @@ public class editarPerfil extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public editarPerfil() {
+    public ListMenu() {
         // Required empty public constructor
     }
 
@@ -34,11 +34,11 @@ public class editarPerfil extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment editarPerfil.
+     * @return A new instance of fragment list_menu.
      */
     // TODO: Rename and change types and number of parameters
-    public static editarPerfil newInstance(String param1, String param2) {
-        editarPerfil fragment = new editarPerfil();
+    public static ListMenu newInstance(String param1, String param2) {
+        ListMenu fragment = new ListMenu();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +59,6 @@ public class editarPerfil extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_editar_perfil_aluno, container, false);
+        return inflater.inflate(R.layout.fragment_list_menu, container, false);
     }
 }
