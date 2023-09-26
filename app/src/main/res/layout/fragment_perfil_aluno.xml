@@ -14,8 +14,10 @@
         android:src="@mipmap/Cover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/ivPhotoProf"
@@ -36,7 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="24dp"
-        android:text="Kauã Mateus de Barros Terra"
+        android:hint="label_nome"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
@@ -49,7 +51,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="Rua Tatuapevi, 63, São Diogo II, Serra"
+        android:hint="label_endereco"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,7 +66,7 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="32dp"
-        android:text="Estou tentando aprender um pouco mais sobre programação em python"
+        android:hint="label_descricao"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
@@ -91,7 +93,10 @@
         app:iconTint="#000000"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnVirarInstrutor" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/btnVirarInstrutor"
+        app:layout_constraintTop_toBottomOf="@+id/tvEmailAluno"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnVirarInstrutor"
@@ -136,51 +141,33 @@
         app:layout_constraintStart_toStartOf="parent"
         tools:layout_editor_absoluteY="365dp" />
 
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:src="@android:drawable/stat_sys_phone_call"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="543dp" />
-
-    <TextView
-        android:id="@+id/tvTelAluno"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="4dp"
-        android:layout_marginBottom="12dp"
-        android:text="(27) 985446812"
-        android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/tvEmailAluno"
-        app:layout_constraintStart_toEndOf="@+id/imageView9" />
-
     <TextView
         android:id="@+id/tvEmailAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginBottom="12dp"
-        android:text="Kamabate271203@gmail.com"
+        android:hint="label_email"
         android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnVirarInstrutor"
-        app:layout_constraintStart_toEndOf="@+id/imageView12" />
+        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="23dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView2"
         android:layout_width="392dp"
         android:layout_height="143dp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView9"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView10" />
