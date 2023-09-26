@@ -15,15 +15,12 @@
             android:name=".HomeActivity"
             android:exported="false" />
         <activity
-            android:name=".perfil_usuarioActivity"
-            android:exported="false" />
-        <activity
             android:name=".areas"
             android:exported="false" />
         <activity
-            android:theme="@style/Theme.TeachHelp.NoActionBar"
             android:name=".LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.TeachHelp.NoActionBar" />
         <activity
             android:name=".CadastroActivity"
             android:exported="false" />
