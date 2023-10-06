@@ -30,7 +30,7 @@
         android:id="@+id/textView6"
         android:layout_width="379dp"
         android:layout_height="26dp"
-        android:text="Quais Áreas você tem interesse:"
+        android:text="Quais áreas você tem interesse:"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
