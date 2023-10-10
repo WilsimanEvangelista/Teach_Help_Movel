@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,6 +32,7 @@ public class LoginActivity extends AppCompatActivity {
                 builder.setView(inflater.inflate(R.layout.dialog_recuperar_senha, null))
                         // Add action buttons
                         .setPositiveButton(R.string.btnRecSenha, new DialogInterface.OnClickListener() {
+                            Intent in = new Intent(LoginActivity.this, HomeActivity.class);
                             @Override
                             public void onClick(DialogInterface dialog, int id) {
                                 // sign in the user ...
