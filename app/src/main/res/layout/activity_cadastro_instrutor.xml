@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
-        android:id="@+id/etDescrição"
+        android:id="@+id/etDescricao"
         android:layout_width="363dp"
         android:layout_height="99dp"
         android:layout_marginStart="24dp"
@@ -91,7 +91,7 @@
         app:cornerRadius="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDescrição" />
+        app:layout_constraintTop_toBottomOf="@+id/etDescricao" />
 
     <Button
         android:id="@+id/btnSalvar"

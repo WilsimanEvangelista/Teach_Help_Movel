@@ -141,7 +141,7 @@
         app:srcCompat="@android:drawable/ic_menu_camera" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadastrar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -193,7 +193,7 @@
         tools:layout_editor_absoluteY="600dp" />
 
     <EditText
-        android:id="@+id/etDescrição"
+        android:id="@+id/etDescricao"
         android:layout_width="366dp"
         android:layout_height="61dp"
         android:layout_marginStart="24dp"
