@@ -19,6 +19,15 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        TextView etEmail
+
+        Intent i = getIntent();
+
+        String emailDigitado = i.getStringExtra( "Texto");
+        TextView email = findViewById(R.id.etEmail);
+
+        email.setText(emailDigitado);
+
         TextView tvRecSenha = findViewById(R.id.tvRecSenha);
         tvRecSenha.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -1,5 +1,6 @@
 package davi.evelyn.harian.wilsiman.teachhelp;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.ActivityNotFoundException;
@@ -46,6 +47,14 @@ public class CadastroActivity extends AppCompatActivity {
                 EditText etDescricao = (EditText) findViewById(R.id.etDescricao);
                 //declarando a String descricao e atribuindo o texto do editText à ela
                 String descricao = etDescricao.getText().toString();
+
+                Intent i = new Intent(CadastroActivity.this,LoginActivity.class);
+
+                i.putExtra("Texto", email);
+
+                startActivity(i);
+
+
             }
         });
     }
