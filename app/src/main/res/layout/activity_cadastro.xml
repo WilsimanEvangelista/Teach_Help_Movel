@@ -194,10 +194,4 @@
         app:layout_constraintTop_toBottomOf="@+id/etDescricao"
         app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="27dp"
-        android:layout_height="18dp"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="600dp" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>

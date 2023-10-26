@@ -2,38 +2,24 @@ package davi.evelyn.harian.wilsiman.teachhelp;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.lifecycle.ViewModelProvider;
 
-import android.Manifest;
+
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import davi.evelyn.harian.wilsiman.teachhelp.model.LoginViewModel;
+import android.widget.TextView;
 
 public class LoginActivity extends AppCompatActivity {
-
-    static int RESULT_REQUEST_PERMISSION = 2;
-    LoginActivity loginViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-
-        List<String> permissions = new ArrayList<>();
-        permissions.add(android.Manifest.permission.CAMERA);
-        permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
-
-        checkForPermissions(permissions);
-
-        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
-
+        TextView etEmail
 
         Intent i = getIntent();
 
