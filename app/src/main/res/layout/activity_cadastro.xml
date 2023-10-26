@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etSenha2" />
 
     <EditText
-        android:id="@+id/etSenha"
+        android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -117,7 +117,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etSenha2"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
         app:srcCompat="@android:drawable/ic_menu_view" />
 
     <Spinner

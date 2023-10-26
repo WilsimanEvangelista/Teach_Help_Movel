@@ -26,7 +26,7 @@ public class RegisterViewModel extends AndroidViewModel {
      * @param newPassword senha do usuário
      * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
      */
-    public LiveData<Boolean> register(String newLogin, String newPassword) {
+    public LiveData<Boolean> register(String newLogin, String newEmail, String newPassword) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
