@@ -87,7 +87,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etSenha2" />
 
     <EditText
-        android:id="@+id/etSenha"
+        android:id="@+id/etPassword"
         android:layout_width="300dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -117,7 +117,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <ImageView
         android:id="@+id/imageView10"
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/etSenha2"
-        app:layout_constraintTop_toBottomOf="@+id/etSenha"
+        app:layout_constraintTop_toBottomOf="@+id/etPassword"
         app:srcCompat="@android:drawable/ic_menu_view" />
 
     <Spinner
@@ -156,7 +156,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <EditText
-        android:id="@+id/etDescrição"
+        android:id="@+id/etDescricao"
         android:layout_width="365dp"
         android:layout_height="203dp"
         android:layout_marginStart="24dp"
@@ -176,7 +176,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etMês" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/btnCadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
@@ -191,13 +191,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDescrição"
+        app:layout_constraintTop_toBottomOf="@+id/etDescricao"
         app:layout_constraintVertical_bias="1.0" />
-
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="27dp"
-        android:layout_height="18dp"
-        tools:layout_editor_absoluteX="187dp"
-        tools:layout_editor_absoluteY="600dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
