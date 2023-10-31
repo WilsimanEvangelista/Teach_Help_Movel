@@ -37,16 +37,16 @@ public class CadastroActivity extends AppCompatActivity {
                 // usuário clicou no botão cadastrar. Se o campo está vazio, exibimos uma mensagem para o
                 // usuário indicando que ele não preencheu o campo e retornamos da função sem fazer
                 // mais nada.
-                EditText etNewLogin =  findViewById(R.id.etNome);
-                final String newLogin = etNewLogin.getText().toString();
-                if(newLogin.isEmpty()) {
-                    Toast.makeText(CadastroActivity.this, "Campo de login não preenchido", Toast.LENGTH_LONG).show();
+                EditText etName =  findViewById(R.id.etNome);
+                final String newName = etName.getText().toString();
+                if(newName.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Campo de Nome não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 EditText etEmail =  findViewById(R.id.etEmail);
-                final String newEmail = etNewLogin.getText().toString();
-                if(newLogin.isEmpty()) {
+                final String newEmail = etEmail.getText().toString();
+                if(newEmail.isEmpty()) {
                     Toast.makeText(CadastroActivity.this, "Campo de email não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
@@ -72,7 +72,7 @@ public class CadastroActivity extends AppCompatActivity {
                 }
 
                 EditText etDescricao =  findViewById(R.id.etDescricao);
-                final String newDescricao = etNewLogin.getText().toString();
+                final String newDescricao = etDescricao.getText().toString();
 
                 // O ViewModel possui o método register, que envia as informações para o servidor web.
                 // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
