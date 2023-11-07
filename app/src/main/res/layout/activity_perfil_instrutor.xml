@@ -101,7 +101,7 @@
         android:src="@drawable/baseline_favorite_border_24"
         app:layout_constraintBottom_toTopOf="@+id/tvEnderecoProf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.818"
+        app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toEndOf="@+id/tvNomeProf"
         app:layout_constraintTop_toBottomOf="@+id/ivPhotoProf"
         app:layout_constraintVertical_bias="0.608" />
@@ -115,5 +115,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil"
         app:layout_constraintVertical_bias="0.076" />
+
+    <RatingBar
+        android:id="@+id/ratingBar"
+        android:layout_width="230dp"
+        android:layout_height="35dp"
+        tools:layout_editor_absoluteX="113dp"
+        tools:layout_editor_absoluteY="183dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
