@@ -19,14 +19,8 @@ public class RegisterViewModel extends AndroidViewModel {
         super(application);
     }
 
-    /**
-     * Método que cria e executa uma requisição ao servidor web para adicionar um novo usuário
-     * na base de dados do servidor
-     * @param newLogin login do usuário
-     * @param newPassword senha do usuário
-     * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
-     */
-    public LiveData<Boolean> register(String newLogin, String newEmail, String newPassword) {
+
+    public LiveData<Boolean> register(String newName, String newEmail, String newPassword, String newDescricao) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -53,7 +47,7 @@ public class RegisterViewModel extends AndroidViewModel {
                 // O método login envia os dados de novo usuário ao servidor. Ele retorna
                 // um booleano indicando true caso o cadastro de novo usuário tenha sido feito com sucesso e false
                 // em caso contrário
-                boolean b = productsRepository.register(newLogin, newPassword);
+                boolean b = productsRepository.register(newName, newEmail, newPassword, newDescricao);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
