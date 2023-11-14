@@ -17,10 +17,10 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <Button
-        android:id="@+id/btnVirarInstrutor2"
+        android:id="@+id/btnEncerrarSessão"
         android:layout_width="155dp"
         android:layout_height="35dp"
         android:backgroundTint="@color/btnColor"
@@ -32,8 +32,10 @@
         app:cornerRadius="48dp"
         app:iconGravity="start"
         app:iconTint="#000000"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="666dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVirarInstrutor"
+        app:layout_constraintVertical_bias="0.428"
+        tools:layout_editor_absoluteX="134dp" />
 
     <Button
         android:id="@+id/btnEditarPerfil2"
@@ -60,7 +62,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/ivPhotoProf"
+        android:id="@+id/ivPhotoAluno"
         android:layout_width="340dp"
         android:layout_height="153dp"
         android:layout_marginStart="32dp"
@@ -82,7 +84,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoProf" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoAluno" />
 
     <TextView
         android:id="@+id/tvEnderecoAluno"
@@ -118,7 +120,7 @@
         android:id="@+id/btnEditarPerfil"
         android:layout_width="104dp"
         android:layout_height="32dp"
-        android:layout_marginStart="8dp"
+        android:layout_marginStart="10dp"
         android:layout_marginEnd="39dp"
         android:layout_marginBottom="85dp"
         android:backgroundTint="@color/btnColor"
@@ -191,11 +193,11 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnVirarInstrutor"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
+        app:layout_constraintStart_toEndOf="@+id/ivEmailAluno"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/ivEmailAluno"
         android:layout_width="23dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
