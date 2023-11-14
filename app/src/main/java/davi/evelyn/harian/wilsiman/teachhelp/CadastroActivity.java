@@ -5,7 +5,6 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -80,7 +79,7 @@ public class CadastroActivity extends AppCompatActivity {
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDescricao);
+                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword);
 
                 // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
                 // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o

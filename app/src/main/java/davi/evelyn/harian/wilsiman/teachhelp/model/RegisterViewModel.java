@@ -20,7 +20,7 @@ public class RegisterViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<Boolean> register(String newName, String newEmail, String newPassword, String newDescricao) {
+    public LiveData<Boolean> register(String newName, String newEmail, String newPassword) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
