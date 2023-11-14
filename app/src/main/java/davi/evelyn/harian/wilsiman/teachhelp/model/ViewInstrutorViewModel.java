@@ -13,9 +13,9 @@ import java.util.concurrent.Executors;
 /**
  * ViewModel referente a ViewProductActivity
  */
-public class ViewProductViewModel extends AndroidViewModel {
+public class ViewInstrutorViewModel extends AndroidViewModel {
 
-    public ViewProductViewModel(@NonNull Application application) {
+    public ViewInstrutorViewModel(@NonNull Application application) {
         super(application);
     }
 
@@ -25,10 +25,10 @@ public class ViewProductViewModel extends AndroidViewModel {
      * @param pid id do produto que se quer obter os detalhes
      * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
      */
-    public LiveData<Product> getProductDetailsLD(String pid) {
+    public LiveData<Instrutor> getProductDetailsLD(String pid) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
-        MutableLiveData<Product> productDetailLD = new MutableLiveData<>();
+        MutableLiveData<Instrutor> productDetailLD = new MutableLiveData<>();
 
         // Cria uma nova linha de execução (thread). O android obriga que chamadas de rede sejam feitas
         // em uma linha de execução separada da principal.
@@ -51,7 +51,7 @@ public class ViewProductViewModel extends AndroidViewModel {
 
                 // O método loadProductDetail obtem os dados detalhados de um produto junto ao servidor.
                 // Ele retorna um objeto do tipo Product, que contém os dados detalhados do produto.
-               Product p = productsRepository.loadProductDetail(pid);
+               Instrutor p = productsRepository.loadProductDetail(pid);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.

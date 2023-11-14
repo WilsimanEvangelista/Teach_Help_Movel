@@ -3,8 +3,8 @@ package davi.evelyn.harian.wilsiman.teachhelp.model;
 /**
  * Classe para representar um produto
  */
-public class Product {
-    public String id; // id do produto
+public class Instrutor {
+    public String nome; // id do produto
     public String name; // nome do produto
     public String price; // preço do produto
 

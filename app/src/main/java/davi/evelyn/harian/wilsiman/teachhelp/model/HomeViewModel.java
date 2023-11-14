@@ -18,7 +18,7 @@ import kotlinx.coroutines.CoroutineScope;
  */
 public class HomeViewModel extends AndroidViewModel {
 
-    LiveData<PagingData<Product>> productsLd;
+    LiveData<PagingData<Instrutor>> productsLd;
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
@@ -27,11 +27,11 @@ public class HomeViewModel extends AndroidViewModel {
         // atividade Galeria Pública
         ProductsRepository productsRepository = new ProductsRepository(getApplication());
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
-        Pager<Integer, Product> pager = new Pager(new PagingConfig(10), () -> new ProductsPagingSource(productsRepository));
+        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new ProductsPagingSource(productsRepository));
         productsLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
     }
 
-    public LiveData<PagingData<Product>> getProductsLd() {
+    public LiveData<PagingData<Instrutor>> getProductsLd() {
         return productsLd;
     }
 

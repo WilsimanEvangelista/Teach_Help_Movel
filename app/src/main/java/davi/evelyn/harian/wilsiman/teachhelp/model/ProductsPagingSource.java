@@ -16,7 +16,7 @@ import java.util.concurrent.Executors;
 /**
  * Classe para realizar a paginação de dados usando a biblioteca Paging 3
  */
-public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, Product> {
+public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, Instrutor> {
 
     ProductsRepository productsRepository;
 
@@ -33,7 +33,7 @@ public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, 
      */
     @Nullable
     @Override
-    public Integer getRefreshKey(@NonNull PagingState<Integer, Product> pagingState) {
+    public Integer getRefreshKey(@NonNull PagingState<Integer, Instrutor> pagingState) {
         // Try to find the page key of the closest page to anchorPosition, from
         // either the prevKey or the nextKey, but you need to handle nullability
         // here:
@@ -52,7 +52,7 @@ public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, 
      */
     @NonNull
     @Override
-    public ListenableFuture<LoadResult<Integer, Product>> loadFuture(@NonNull LoadParams<Integer> loadParams) {
+    public ListenableFuture<LoadResult<Integer, Instrutor>> loadFuture(@NonNull LoadParams<Integer> loadParams) {
 
         // calcula os parâmetros de limit e offset que serão enviados ao servidor web
         Integer nextPageNumber = loadParams.getKey();
@@ -75,13 +75,13 @@ public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, 
         Integer finalNextPageNumber = nextPageNumber;
 
         // executa a nova linha de execução.
-        ListenableFuture<LoadResult<Integer, Product>> lf = service.submit(new Callable<LoadResult<Integer, Product>>() {
+        ListenableFuture<LoadResult<Integer, Instrutor>> lf = service.submit(new Callable<LoadResult<Integer, Instrutor>>() {
             /**
              * Tudo que estiver dentro dessa função será executado na nova linha de execução.
              */
             @Override
-            public LoadResult<Integer, Product> call() {
-                List<Product> productsList = null;
+            public LoadResult<Integer, Instrutor> call() {
+                List<Instrutor> productsList = null;
                 // envia uma requisição para o servidor web pedindo por uma nova página de dados (bloco de produtos)
                 productsList = productsRepository.loadProducts(loadParams.getLoadSize(), finalOffSet);
                 Integer nextKey = null;
@@ -89,7 +89,7 @@ public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, 
                     nextKey = finalNextPageNumber + 1;
                 }
                 // monta uma página do padrão da biblioteca Paging 3.
-                return new LoadResult.Page<Integer, Product>(productsList,
+                return new LoadResult.Page<Integer, Instrutor>(productsList,
                         null,
                         nextKey);
             }
