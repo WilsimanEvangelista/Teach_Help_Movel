@@ -14,7 +14,7 @@
         android:src="@mipmap/Cover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
@@ -74,26 +74,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvEnderecoProf" />
 
-    <Button
-        android:id="@+id/btnEditarPerfil"
-        android:layout_width="216dp"
-        android:layout_height="52dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="32dp"
-        android:backgroundTint="@color/btnColor"
-        android:gravity="center|end"
-        android:text="Baixar Currículo"
-        android:textColor="#000000"
-        app:cornerRadius="24dp"
-        app:icon="@android:drawable/stat_sys_download"
-        app:iconGravity="start"
-        app:iconTint="#000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvDescProf" />
-
     <ImageView
         android:id="@+id/imageView13"
         android:layout_width="29dp"
@@ -107,14 +87,14 @@
         app:layout_constraintVertical_bias="0.608" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView4"
         android:layout_width="410dp"
         android:layout_height="121dp"
+        android:layout_marginBottom="100dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageView14"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnEditarPerfil"
-        app:layout_constraintVertical_bias="0.076" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <RatingBar
         android:id="@+id/rbAvaliação"
@@ -123,5 +103,19 @@
         android:textAlignment="center"
         tools:layout_editor_absoluteX="127dp"
         tools:layout_editor_absoluteY="177dp" />
+
+    <TextView
+        android:id="@+id/tvCurriculo"
+        android:layout_width="194dp"
+        android:layout_height="36dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="TextView"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.883"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDescProf"
+        app:layout_constraintVertical_bias="0.118" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
