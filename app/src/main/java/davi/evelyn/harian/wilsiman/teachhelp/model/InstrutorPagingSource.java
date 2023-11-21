@@ -16,13 +16,13 @@ import java.util.concurrent.Executors;
 /**
  * Classe para realizar a paginação de dados usando a biblioteca Paging 3
  */
-public class ProductsPagingSource extends ListenableFuturePagingSource<Integer, Instrutor> {
+public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer, Instrutor> {
 
-    ProductsRepository productsRepository;
+    InstrutorRepository productsRepository;
 
     Integer initialLoadSize = 0;
 
-    public ProductsPagingSource(ProductsRepository productsRepository) {
+    public InstrutorPagingSource(InstrutorRepository productsRepository) {
         this.productsRepository = productsRepository;
     }
 

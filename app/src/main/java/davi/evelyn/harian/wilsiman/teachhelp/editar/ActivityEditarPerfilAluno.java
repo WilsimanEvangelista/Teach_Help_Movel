@@ -1,8 +1,10 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.editar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 
 public class ActivityEditarPerfilAluno extends AppCompatActivity {
 

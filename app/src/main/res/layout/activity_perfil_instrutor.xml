@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".PerfilInstrutorActivity">
+    tools:context=".perfil.PerfilInstrutorActivity">
 
     <ImageView
         android:id="@+id/imageView14"
@@ -110,7 +110,8 @@
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="TextView"
+        android:text="label_curriculo"
+        android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.883"

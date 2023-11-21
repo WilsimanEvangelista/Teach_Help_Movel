@@ -25,9 +25,9 @@ public class HomeViewModel extends AndroidViewModel {
 
         // Abaixo configuramos o uso da biblioteca de paginação Paging 3, assim como foi feito na
         // atividade Galeria Pública
-        ProductsRepository productsRepository = new ProductsRepository(getApplication());
+        InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
-        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new ProductsPagingSource(productsRepository));
+        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(productsRepository));
         productsLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
     }
 

@@ -13,12 +13,12 @@ import java.util.concurrent.Executors;
 /**
  * ViewModel referente a AddProductActivity
  */
-public class AddProductViewModel extends AndroidViewModel {
+public class AddInstrutorViewModel extends AndroidViewModel {
 
     // guardamos o local da foto escolhida pelo usuário
     String currentPhotoPath = "";
 
-    public AddProductViewModel(@NonNull Application application) {
+    public AddInstrutorViewModel(@NonNull Application application) {
         super(application);
     }
 
@@ -39,7 +39,7 @@ public class AddProductViewModel extends AndroidViewModel {
      * @param imgLocation local onde está salva a imagem do produto
      * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
      */
-    public LiveData<Boolean> addProduct(String name, String price, String description, String imgLocation) {
+    public LiveData<Boolean> addInstrutor(String newName, String newEmail, String newPassword, String newDescricao) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -60,12 +60,12 @@ public class AddProductViewModel extends AndroidViewModel {
 
                 // Criamos uma instância de ProductsRepository. É dentro dessa classe que estão os
                 // métodos que se comunicam com o servidor web.
-                ProductsRepository productsRepository = new ProductsRepository(getApplication());
+                InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
 
                 // O método addProduct envia os dados de um novo produto ao servidor. Ele retorna
                 // um booleano indicando true caso o produto tenha sido cadastrado e false
                 // em caso contrário
-                boolean b = productsRepository.addProduct(name, price, description, imgLocation);
+                boolean b = instrutorRepository.addInstrutor(newName, newEmail, newPassword, newDescricao);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.

@@ -1,21 +1,20 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.cadastrar;
 
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 
 
-public class CadastroInstrutorActivity extends CadastroActivity{
+public class CadastroInstrutorActivity extends CadastroActivity {
 
 
     RegisterViewModel registerViewModel;
@@ -42,14 +41,14 @@ public class CadastroInstrutorActivity extends CadastroActivity{
                 EditText etEndereco =  findViewById(R.id.etEndereco);
                 final String newEndereco = etEndereco.getText().toString();
                 if(newEndereco.isEmpty()) {
-                    Toast.makeText(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, "Campo de endereço não preenchido", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadastroInstrutorActivity.this, "Campo de endereço não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
 
                 EditText etDescricao =  findViewById(R.id.etDescricao);
                 final String newDescricaoInstrutor = etDescricao.getText().toString();
                 if(newDescricaoInstrutor.isEmpty()) {
-                    Toast.makeText(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, "Campo de descrição não preenchido", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadastroInstrutorActivity.this, "Campo de descrição não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -57,7 +56,7 @@ public class CadastroInstrutorActivity extends CadastroActivity{
                 EditText etCurriculo =  findViewById(R.id.etCurriculoCadastro);
                 final String newCurriculo = etCurriculo.getText().toString();
                 if(newCurriculo.isEmpty()) {
-                    Toast.makeText(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, "Campo de currículo não preenchido", Toast.LENGTH_LONG).show();
+                    Toast.makeText(CadastroInstrutorActivity.this, "Campo de currículo não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
 
@@ -69,12 +68,12 @@ public class CadastroInstrutorActivity extends CadastroActivity{
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newEndereco, newDescricaoInstrutor, newCurriculo);
+                LiveData<Boolean> resultLD = registerViewModel.register(newEndereco, newDescricaoInstrutor, newCurriculo, newDescricao);
 
                 // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
                 // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o
                 // LiveData avisa que o resultado chegou chamando o método onChanged abaixo.
-                resultLD.observe(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, new Observer<Boolean>() {
+                resultLD.observe(CadastroInstrutorActivity.this, new Observer<Boolean>() {
                     @Override
                     public void onChanged(Boolean aBoolean) {
                         // aBoolean contém o resultado do cadastro. Se aBoolean for true, significa
@@ -82,13 +81,13 @@ public class CadastroInstrutorActivity extends CadastroActivity{
                         // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
                         // finalizamos a Activity, voltamos para a tela de login.
                         if(aBoolean) {
-                            Toast.makeText(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CadastroInstrutorActivity.this, "Novo usuario registrado com sucesso", Toast.LENGTH_LONG).show();
                             finish();
                         }
                         else {
                             // Se o cadastro não deu certo, apenas continuamos na tela de cadastro e
                             // indicamos com uma mensagem ao usuário que o cadastro não deu certo.
-                            Toast.makeText(davi.evelyn.harian.wilsiman.teachhelp.CadastroInstrutorActivity.this, "Erro ao registrar novo usuário", Toast.LENGTH_LONG).show();
+                            Toast.makeText(CadastroInstrutorActivity.this, "Erro ao registrar novo usuário", Toast.LENGTH_LONG).show();
                         }
                     }
                 });

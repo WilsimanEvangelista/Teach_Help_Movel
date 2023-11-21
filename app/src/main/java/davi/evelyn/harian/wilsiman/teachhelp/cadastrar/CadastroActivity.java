@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.cadastrar;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
@@ -11,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 
 public class CadastroActivity extends AppCompatActivity {
@@ -79,7 +80,7 @@ public class CadastroActivity extends AppCompatActivity {
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword);
+                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDescricao);
 
                 // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
                 // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o

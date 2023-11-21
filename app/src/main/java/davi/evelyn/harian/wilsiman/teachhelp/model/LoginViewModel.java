@@ -48,7 +48,7 @@ public class LoginViewModel extends AndroidViewModel {
 
                 // Criamos uma instância de ProductsRepository. É dentro dessa classe que estão os
                 // métodos que se comunicam com o servidor web.
-                ProductsRepository productsRepository = new ProductsRepository(getApplication());
+                InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
 
                 // O método login envia os dados de autenticação ao servidor. Ele retorna
                 // um booleano indicando true caso o login tenha sido feito com sucesso e false

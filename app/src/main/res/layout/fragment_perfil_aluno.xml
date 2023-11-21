@@ -5,10 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/background"
-    tools:context=".PerfilAlunoFragment">
+    tools:context=".perfil.PerfilAlunoFragment">
 
     <ImageView
-        android:id="@+id/imageView15"
+        android:id="@+id/imageEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@mipmap/Cover"
@@ -20,9 +20,10 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnVirarInstrutor2"
+        android:id="@+id/btnEncerrarSessao"
         android:layout_width="155dp"
         android:layout_height="35dp"
+        android:layout_marginBottom="16dp"
         android:backgroundTint="@color/btnColor"
         android:gravity="start"
         android:text="ENCERRAR SESSÃO"
@@ -32,8 +33,8 @@
         app:cornerRadius="48dp"
         app:iconGravity="start"
         app:iconTint="#000000"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="666dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="134dp" />
 
     <Button
         android:id="@+id/btnEditarPerfil2"
@@ -198,8 +199,8 @@
         android:id="@+id/imageView12"
         android:layout_width="23dp"
         android:layout_height="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="64dp"
         android:src="@android:drawable/ic_dialog_email"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />

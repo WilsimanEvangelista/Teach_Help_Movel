@@ -4,7 +4,7 @@ import androidx.lifecycle.ViewModel;
 
 import java.util.ArrayList;
 
-import davi.evelyn.harian.wilsiman.teachhelp.Instrutor;
+import davi.evelyn.harian.wilsiman.teachhelp.instrutor.Instrutor;
 
 public class MainViewModel extends ViewModel {
     private ArrayList<Instrutor> instrutores = new ArrayList<>();
