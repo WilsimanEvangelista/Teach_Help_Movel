@@ -20,7 +20,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/ivPhotoProf"
+        android:id="@+id/ivPhotoAluno"
         android:layout_width="340dp"
         android:layout_height="153dp"
         android:layout_marginStart="32dp"
@@ -42,7 +42,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoProf" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoAluno" />
 
     <TextView
         android:id="@+id/tvEnderecoProf"
@@ -83,7 +83,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toEndOf="@+id/tvNomeProf"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoProf"
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoAluno"
         app:layout_constraintVertical_bias="0.608" />
 
     <androidx.recyclerview.widget.RecyclerView
