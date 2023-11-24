@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +18,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import davi.evelyn.harian.wilsiman.teachhelp.cadastrar.CadastroActivity;
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.LoginViewModel;
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 

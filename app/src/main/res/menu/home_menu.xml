@@ -2,8 +2,20 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:icon="@drawable/baseline_home_24" />
-    <item android:icon="@drawable/baseline_search_24" />
-    <item android:icon="@drawable/baseline_favorite_24" />
-    <item android:icon="@drawable/baseline_person_24" />
+    <item
+        android:id="@+id/optHome"
+        android:icon="@drawable/baseline_home_24"
+        android:title="Home" />
+    <item
+        android:id="@+id/optAulasMarcadas"
+        android:icon="@drawable/baseline_calendar_month_24"
+        android:title="Aulas Marcadas" />
+    <item
+        android:id="@+id/optFavoritos"
+        android:icon="@drawable/baseline_favorite_24"
+        android:title="Favoritos" />
+    <item
+        android:id="@+id/optPerfil"
+        android:icon="@drawable/baseline_person_24"
+        android:title="Perfil" />
 </menu>

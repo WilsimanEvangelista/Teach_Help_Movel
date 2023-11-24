@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#021732"
-    tools:context=".areas.AreasActivity">
+    tools:context=".home.AreasActivity">
 
     <CheckBox
         android:id="@+id/cbAnálisedeDados"

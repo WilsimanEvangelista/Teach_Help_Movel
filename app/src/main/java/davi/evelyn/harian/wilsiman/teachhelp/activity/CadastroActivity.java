@@ -1,14 +1,18 @@
-package davi.evelyn.harian.wilsiman.teachhelp.cadastrar;
+package davi.evelyn.harian.wilsiman.teachhelp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.DatePickerDialog;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
@@ -22,6 +26,21 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+
+        ImageButton imbDataNasc = findViewById(R.id.imbDataNasc);
+        imbDataNasc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatePickerDialog datePickerDialog = new DatePickerDialog(CadastroActivity.this);
+                datePickerDialog.setOnDateSetListener(new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker datePicker, int ano, int mes, int dia) {
+                        EditText etDataNasc = findViewById(R.id.etDataNasc);
+                        etDataNasc.setText(dia+"/"+mes+"/"+ano);
+                    }
+                });
+            }
+        });
 
         // obtemos o ViewModel pois é nele que está o método que se conecta ao servior web.
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
@@ -71,8 +90,26 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                EditText etDescricao =  findViewById(R.id.etDescricao);
-                final String newDescricao = etDescricao.getText().toString();
+                EditText etDataNasc =  findViewById(R.id.etDataNasc);
+                final String newDataNasc = etDataNasc.getText().toString();
+                if(newDataNasc.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Campo de checagem de Data de Nascimento não preenchido", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                EditText etBairro =  findViewById(R.id.etBairro);
+                final String newBairro = etBairro.getText().toString();
+                if(newBairro.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Campo de Bairro não preenchido", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                EditText etRua =  findViewById(R.id.etRua);
+                final String newRua = etRua.getText().toString();
+                if(newRua.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Campo de Rua não preenchido", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
                 // O ViewModel possui o método register, que envia as informações para o servidor web.
                 // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
@@ -80,7 +117,7 @@ public class CadastroActivity extends AppCompatActivity {
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDescricao);
+                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDataNasc);
 
                 // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
                 // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o

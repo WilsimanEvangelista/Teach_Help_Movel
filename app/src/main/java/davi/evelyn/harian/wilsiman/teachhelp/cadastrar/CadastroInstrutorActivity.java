@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
+import davi.evelyn.harian.wilsiman.teachhelp.activity.CadastroActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 
 

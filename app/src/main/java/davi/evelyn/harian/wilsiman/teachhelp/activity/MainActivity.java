@@ -1,12 +1,10 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.activity;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-
-import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 

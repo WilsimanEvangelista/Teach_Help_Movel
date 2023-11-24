@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp.areas;
+package davi.evelyn.harian.wilsiman.teachhelp.home;
 
 import androidx.appcompat.app.AppCompatActivity;
 

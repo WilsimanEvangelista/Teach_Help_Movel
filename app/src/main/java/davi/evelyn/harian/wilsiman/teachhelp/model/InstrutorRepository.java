@@ -30,14 +30,14 @@ public class InstrutorRepository {
     }
 
 
-    public boolean register(String newName, String newEmail, String newPassword, String newDescricao) {
+    public boolean register(String newName, String newEmail, String newPassword, String newDataNasc) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.PRODUCTS_APP_URL + "registrar.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "registrar.php", "POST", "UTF-8");
         httpRequest.addParam("novo_login", newName);
         httpRequest.addParam("novo_email", newEmail);
         httpRequest.addParam("nova_senha", newPassword);
-        httpRequest.addParam("nova_descricao", newDescricao);
+        httpRequest.addParam("nova_data_nasc", newDataNasc);
 
         String result = "";
         try {
@@ -86,7 +86,7 @@ public class InstrutorRepository {
     public boolean login(String Email, String Password) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.PRODUCTS_APP_URL + "login.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "login.php", "POST", "UTF-8");
         httpRequest.setBasicAuth(Email, Password);
 
         String result = "";
@@ -141,7 +141,7 @@ public class InstrutorRepository {
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.PRODUCTS_APP_URL + "criar_produto.php", "POST", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "criar_produto.php", "POST", "UTF-8");
         httpRequest.addParam("foto", foto);
         httpRequest.addParam("endereco", endereco);
         httpRequest.addParam("descricao", descricao);
@@ -199,11 +199,8 @@ public class InstrutorRepository {
     }
 
     /**
-     * Método que cria uma requisição HTTP para obter uma página/bloco de produtos junto ao servidor web.
-     * @param limit a quantidade de produtos a serem obtidos
-     * @param offSet a posição a partir da qual a página de produtos deve começar
-     * @return lista de produtos
      */
+    /*
     public List<Product> loadProducts(Integer limit, Integer offSet) {
 
         // cria a lista de produtos incicialmente vazia, que será retornada como resultado
@@ -215,7 +212,7 @@ public class InstrutorRepository {
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.PRODUCTS_APP_URL +"pegar_produtos.php", "GET", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL +"pegar_produtos.php", "GET", "UTF-8");
         httpRequest.addParam("limit", limit.toString());
         httpRequest.addParam("offset", offSet.toString());
 
@@ -299,7 +296,7 @@ public class InstrutorRepository {
         }
 
         return productsList;
-    }
+    }*/
 
     public UserProfile loadProfileDetails() {
 
@@ -309,7 +306,7 @@ public class InstrutorRepository {
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.PRODUCTS_APP_URL + "pegar_detalhes_usuario.php", "GET", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "pegar_detalhes_usuario.php", "GET", "UTF-8");
         httpRequest.addParam("email", login);
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do

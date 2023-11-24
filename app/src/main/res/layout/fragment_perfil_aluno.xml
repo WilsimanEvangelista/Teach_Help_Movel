@@ -20,44 +20,26 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnVirarInstrutor2"
-        android:layout_width="155dp"
-        android:layout_height="35dp"
-        android:backgroundTint="@color/btnColor"
+        android:id="@+id/btnEncerrarSessao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="24dp"
+        android:backgroundTint="#FF4A4A"
         android:gravity="start"
         android:text="ENCERRAR SESSÃO"
         android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="11sp"
+        android:textSize="12sp"
+        android:textStyle="bold"
         app:cornerRadius="48dp"
         app:iconGravity="start"
         app:iconTint="#000000"
-        tools:layout_editor_absoluteX="134dp"
-        tools:layout_editor_absoluteY="666dp" />
-
-    <Button
-        android:id="@+id/btnEditarPerfil2"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="85dp"
-        android:backgroundTint="@color/btnColor"
-        android:gravity="center|end"
-        android:text="Editar "
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:cornerRadius="48dp"
-        app:icon="@android:drawable/ic_menu_edit"
-        app:iconGravity="start"
-        app:iconSize="20dp"
-        app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnVirarInstrutor"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailAluno"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnVirarInstrutor" />
 
     <ImageView
         android:id="@+id/ivPhotoProf"
@@ -101,10 +83,10 @@
 
     <TextView
         android:id="@+id/tvDescAluno"
-        android:layout_width="354dp"
-        android:layout_height="49dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:hint="label_descricao"
         android:textColor="#FFFFFF"
@@ -115,52 +97,31 @@
         app:layout_constraintTop_toBottomOf="@+id/tvEnderecoAluno" />
 
     <Button
-        android:id="@+id/btnEditarPerfil"
-        android:layout_width="104dp"
-        android:layout_height="32dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="39dp"
-        android:layout_marginBottom="85dp"
-        android:backgroundTint="@color/btnColor"
-        android:gravity="center|end"
-        android:text="Editar "
-        android:textColor="#000000"
-        android:textSize="10sp"
-        app:cornerRadius="48dp"
-        app:icon="@android:drawable/ic_menu_edit"
-        app:iconGravity="start"
-        app:iconSize="20dp"
-        app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/btnVirarInstrutor"
-        app:layout_constraintTop_toBottomOf="@+id/tvEmailAluno"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
         android:id="@+id/btnVirarInstrutor"
-        android:layout_width="228dp"
-        android:layout_height="34dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginBottom="85dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="@color/btnColor"
         android:gravity="start"
         android:text="Quero me tornar um instrutor"
+        android:textAlignment="center"
         android:textColor="#000000"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:cornerRadius="48dp"
         app:iconGravity="start"
         app:iconTint="#000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:text="Áreas escolhidas:"
         android:textColor="#FFFFFF"
@@ -170,53 +131,36 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDescAluno" />
 
     <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:text="Instrutores favoritos:"
-        android:textColor="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="365dp" />
-
-    <TextView
         android:id="@+id/tvEmailAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="32dp"
         android:hint="label_email"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnVirarInstrutor"
-        app:layout_constraintStart_toEndOf="@+id/imageView12"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
+        app:layout_constraintStart_toEndOf="@+id/imageView12" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="23dp"
         android:layout_height="24dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
         android:src="@android:drawable/ic_dialog_email"
+        app:layout_constraintEnd_toStartOf="@+id/tvEmailAluno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerView2"
-        android:layout_width="392dp"
-        android:layout_height="143dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView10" />
+        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
-        android:layout_width="348dp"
-        android:layout_height="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView10"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView8" />
@@ -236,5 +180,14 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDescAluno"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/baseline_add_24" />
+
+    <ImageButton
+        android:id="@+id/imageButton5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="32dp"
+        android:src="@android:drawable/ic_menu_camera"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:layout_editor_absoluteY="118dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

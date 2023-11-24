@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#021732"
-    tools:context=".areas.AreasInteresse">
+    tools:context=".home.AreasInteresse">
 
     <Button
         android:id="@+id/button3"

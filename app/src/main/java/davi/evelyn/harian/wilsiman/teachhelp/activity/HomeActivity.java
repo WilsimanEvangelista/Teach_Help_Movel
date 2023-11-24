@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp;
+package davi.evelyn.harian.wilsiman.teachhelp.activity;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.HomeViewModel;
 
 public class HomeActivity extends AppCompatActivity {

@@ -90,7 +90,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etNome" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/tvDataNasc"
         android:layout_width="174dp"
         android:layout_height="25dp"
         android:layout_marginStart="12dp"

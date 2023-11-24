@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp.instrutor;
+package davi.evelyn.harian.wilsiman.teachhelp.fragments;
 
 import android.os.Bundle;
 
@@ -12,10 +12,10 @@ import davi.evelyn.harian.wilsiman.teachhelp.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link instrutores_favoritos#newInstance} factory method to
+ * Use the {@link InstrutoresFavoritosFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class instrutores_favoritos extends Fragment {
+public class InstrutoresFavoritosFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class instrutores_favoritos extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public instrutores_favoritos() {
+    public InstrutoresFavoritosFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class instrutores_favoritos extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment instrutores_favoritos.
+     * @return A new instance of fragment InstrutoresFavoritosFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static instrutores_favoritos newInstance(String param1, String param2) {
-        instrutores_favoritos fragment = new instrutores_favoritos();
+    public static InstrutoresFavoritosFragment newInstance(String param1, String param2) {
+        InstrutoresFavoritosFragment fragment = new InstrutoresFavoritosFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
