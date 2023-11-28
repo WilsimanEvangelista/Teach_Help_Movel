@@ -19,7 +19,7 @@ import android.widget.TextView;
 import davi.evelyn.harian.wilsiman.teachhelp.activity.LoginActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.PerfilViewModel;
-import davi.evelyn.harian.wilsiman.teachhelp.perfil.UserProfile;
+import davi.evelyn.harian.wilsiman.teachhelp.model.UserProfile;
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 
 /**

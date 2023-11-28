@@ -10,8 +10,6 @@ import androidx.lifecycle.MutableLiveData;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-import davi.evelyn.harian.wilsiman.teachhelp.perfil.UserProfile;
-
 public class PerfilViewModel extends AndroidViewModel {
 
         private MutableLiveData<UserProfile> nome = new MutableLiveData<>();

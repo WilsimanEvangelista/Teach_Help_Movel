@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp.editar;
+package davi.evelyn.harian.wilsiman.teachhelp.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 

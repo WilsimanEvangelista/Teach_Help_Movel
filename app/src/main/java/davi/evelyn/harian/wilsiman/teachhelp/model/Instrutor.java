@@ -1,15 +1,25 @@
 package davi.evelyn.harian.wilsiman.teachhelp.model;
 
+import java.util.Date;
+
 /**
  * Classe para representar um produto
  */
 public class Instrutor {
-    public String nome; // id do produto
-    public String name; // nome do produto
-    public String price; // preço do produto
+    String id, nome, descricao, endereco, email, curriculo;
+    int foto;
+    Date data_nascimento;
 
-    public String img; // url da imagem do produto
-    public String description; // descrição do produto
-    public String createdBy; // quem criou o produto
-    public String createdAt; // quando foi criado o produto
+    public Instrutor(String id, String nome, String descricao, String endereco, String email,String curriculo, int foto, Date data_nascimento){
+        this.id = id;
+        this.nome = nome;
+        this.descricao = descricao;
+        this.endereco = endereco;
+        this.email = email;
+        this.curriculo = curriculo;
+        this.foto = foto;
+        this.data_nascimento = data_nascimento;
+
+    }
 }
+

@@ -7,10 +7,6 @@
         android:icon="@drawable/baseline_home_24"
         android:title="Home" />
     <item
-        android:id="@+id/optAulasMarcadas"
-        android:icon="@drawable/baseline_calendar_month_24"
-        android:title="Aulas Marcadas" />
-    <item
         android:id="@+id/optFavoritos"
         android:icon="@drawable/baseline_favorite_24"
         android:title="Favoritos" />

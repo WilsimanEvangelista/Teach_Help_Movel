@@ -24,7 +24,7 @@
         android:theme="@style/Theme.TeachHelp"
         tools:targetApi="31">
         <activity
-            android:name=".editar.ActivityEditarPerfilAluno"
+            android:name=".activity.ActivityEditarPerfilAluno"
             android:exported="false" />
         <activity
             android:name=".activity.PerfilInstrutorActivity"

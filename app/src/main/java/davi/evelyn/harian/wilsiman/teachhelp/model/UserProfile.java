@@ -1,4 +1,4 @@
-package davi.evelyn.harian.wilsiman.teachhelp.perfil;
+package davi.evelyn.harian.wilsiman.teachhelp.model;
 
 public class UserProfile {
     public String nome; // id do produto
