@@ -9,6 +9,8 @@ import org.json.JSONObject;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 import davi.evelyn.harian.wilsiman.teachhelp.util.HttpRequest;
@@ -29,11 +31,12 @@ public class InstrutorRepository {
     public boolean register(String newName, String newEmail, String newPassword, String newDataNasc, String newEndereco) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "registrar.php", "POST", "UTF-8");
-        httpRequest.addParam("novo_login", newName);
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "cadastrar.php", "POST", "UTF-8");
+        httpRequest.addParam("novo_nome", newName);
         httpRequest.addParam("novo_email", newEmail);
         httpRequest.addParam("nova_senha", newPassword);
         httpRequest.addParam("nova_data_nasc", newDataNasc);
+        httpRequest.addParam("novo_endereco", newEndereco);
 
         String result = "";
         try {
@@ -79,11 +82,11 @@ public class InstrutorRepository {
 
     }
 
-    public boolean login(String Email, String Password) {
+    public boolean login(String email, String senha) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "login.php", "POST", "UTF-8");
-        httpRequest.setBasicAuth(Email, Password);
+        httpRequest.setBasicAuth(email, senha);
 
         String result = "";
         try {
@@ -192,6 +195,9 @@ public class InstrutorRepository {
             Log.e("HTTP RESULT", result);
         }
         return false;
+    }
+    public List<Instrutor> loadInstrutor(Integer limit, Integer offSet) {
+        return new ArrayList<>();
     }
 
     /**

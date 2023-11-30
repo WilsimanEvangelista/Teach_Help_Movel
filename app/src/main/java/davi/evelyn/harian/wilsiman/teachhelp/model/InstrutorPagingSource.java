@@ -81,15 +81,15 @@ public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer,
              */
             @Override
             public LoadResult<Integer, Instrutor> call() {
-                List<Instrutor> productsList = null;
+                List<Instrutor> instrutorList = null;
                 // envia uma requisição para o servidor web pedindo por uma nova página de dados (bloco de produtos)
-                productsList = productsRepository.loadProducts(loadParams.getLoadSize(), finalOffSet);
+                instrutorList = instrutorRepository.loadInstrutor(loadParams.getLoadSize(), finalOffSet);
                 Integer nextKey = null;
-                if(productsList.size() >= loadParams.getLoadSize()) {
+                if(instrutorList.size() >= loadParams.getLoadSize()) {
                     nextKey = finalNextPageNumber + 1;
                 }
                 // monta uma página do padrão da biblioteca Paging 3.
-                return new LoadResult.Page<Integer, Instrutor>(productsList,
+                return new LoadResult.Page<Integer, Instrutor>(instrutorList,
                         null,
                         nextKey);
             }

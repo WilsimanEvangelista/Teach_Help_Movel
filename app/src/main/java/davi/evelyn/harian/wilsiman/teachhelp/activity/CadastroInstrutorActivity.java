@@ -11,6 +11,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
+import davi.evelyn.harian.wilsiman.teachhelp.model.CadastroInstrutorViewModel;
 import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 
 
@@ -62,29 +63,7 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newDescricaoInstrutor, newCurriculo);
 
-                // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
-                // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o
-                // LiveData avisa que o resultado chegou chamando o método onChanged abaixo.
-                resultLD.observe(CadastroInstrutorActivity.this, new Observer<Boolean>() {
-                    @Override
-                    public void onChanged(Boolean aBoolean) {
-                        // aBoolean contém o resultado do cadastro. Se aBoolean for true, significa
-                        // que o cadastro do usuário foi feito corretamente. Indicamos isso ao usuário
-                        // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
-                        // finalizamos a Activity, voltamos para a tela de login.
-                        if(aBoolean) {
-                            Toast.makeText(CadastroInstrutorActivity.this, "Novo instrutor registrado com sucesso", Toast.LENGTH_LONG).show();
-                            finish();
-                        }
-                        else {
-                            // Se o cadastro não deu certo, apenas continuamos na tela de cadastro e
-                            // indicamos com uma mensagem ao usuário que o cadastro não deu certo.
-                            Toast.makeText(CadastroInstrutorActivity.this, "Erro ao registrar novo instrutor", Toast.LENGTH_LONG).show();
-                        }
-                    }
-                });
             }
         });
     }

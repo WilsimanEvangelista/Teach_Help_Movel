@@ -47,15 +47,15 @@ public class ViewInstrutorViewModel extends AndroidViewModel {
 
                 // Criamos uma instância de ProductsRepository. É dentro dessa classe que estão os
                 // métodos que se comunicam com o servidor web.
-               InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
+               //InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
 
                 // O método loadProductDetail obtem os dados detalhados de um produto junto ao servidor.
                 // Ele retorna um objeto do tipo Product, que contém os dados detalhados do produto.
-               Instrutor p = productsRepository.loadProfileDetails(pid);
+               //Instrutor p = productsRepository.loadProfileDetails();
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
-               productDetailLD.postValue(p);
+               //productDetailLD.postValue(p);
             }
         });
 

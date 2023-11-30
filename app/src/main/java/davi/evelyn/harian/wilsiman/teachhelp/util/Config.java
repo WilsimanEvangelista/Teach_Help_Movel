@@ -9,17 +9,13 @@ import android.content.SharedPreferences;
 public class Config {
 
     // endereço base do servidor web
-    public static String TEACHHELP_APP_URL = "https://productifes-dispmoveisbsi.b4a.run/";
+    public static String TEACHHELP_APP_URL = "https://teachhelp-1jrzb695.b4a.run/mobile/";
 
-    /**
-     * Salva o login no espaço reservado da app
-     * @param context contexto da app
-     * @param login o login
-     */
-    public static void setLogin(Context context, String login) {
+
+    public static void setLogin(Context context, String email) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         SharedPreferences.Editor mEditor = mPrefs.edit();
-        mEditor.putString("login", login).commit();
+        mEditor.putString("email", email).commit();
     }
 
     /**
@@ -29,17 +25,14 @@ public class Config {
      */
     public static String getLogin(Context context) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
-        return mPrefs.getString("login", "");
+        return mPrefs.getString("email", "");
     }
 
-    /**
-     * @param context
-     * @param password
-     */
-    public static void setPassword(Context context, String password) {
+
+    public static void setPassword(Context context, String senha) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
         SharedPreferences.Editor mEditor = mPrefs.edit();
-        mEditor.putString("password", password).commit();
+        mEditor.putString("senha", senha).commit();
     }
 
     /**
@@ -48,6 +41,6 @@ public class Config {
      */
     public static String getPassword(Context context) {
         SharedPreferences mPrefs = context.getSharedPreferences("configs", 0);
-        return mPrefs.getString("password", "");
+        return mPrefs.getString("senha", "");
     }
 }
