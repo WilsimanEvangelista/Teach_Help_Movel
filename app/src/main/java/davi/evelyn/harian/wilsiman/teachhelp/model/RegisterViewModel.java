@@ -20,7 +20,7 @@ public class RegisterViewModel extends AndroidViewModel {
     }
 
 
-    public LiveData<Boolean> register(String newName, String newEmail, String newPassword, String newDataNasc) {
+    public LiveData<Boolean> register(String newName, String newEmail, String newPassword, String newDataNasc, String newEndereco) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -42,12 +42,12 @@ public class RegisterViewModel extends AndroidViewModel {
 
                 // Criamos uma instância de ProductsRepository. É dentro dessa classe que estão os
                 // métodos que se comunicam com o servidor web.
-                InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
+                InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
 
                 // O método login envia os dados de novo usuário ao servidor. Ele retorna
                 // um booleano indicando true caso o cadastro de novo usuário tenha sido feito com sucesso e false
                 // em caso contrário
-                boolean b = productsRepository.register(newName, newEmail, newPassword, newDataNasc);
+                boolean b = instrutorRepository.register(newName, newEmail, newPassword, newDataNasc, newEndereco);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.

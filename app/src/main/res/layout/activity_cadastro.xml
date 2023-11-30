@@ -19,21 +19,6 @@
         app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@mipmap/cover" />
 
-    <TextView
-        android:id="@+id/tvEndereco"
-        android:layout_width="104dp"
-        android:layout_height="27dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="30dp"
-        android:backgroundTint="#FFFFFF"
-        android:elevation="100dp"
-        android:text="Endereço:"
-        android:textAlignment="viewStart"
-        android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etDataNasc" />
-
     <EditText
         android:id="@+id/etNome"
         android:layout_width="0dp"
@@ -89,49 +74,19 @@
         app:layout_constraintTop_toBottomOf="@+id/etSenha2" />
 
     <TextView
-        android:id="@+id/tvCidade"
+        android:id="@+id/tvEndereco"
         android:layout_width="174dp"
         android:layout_height="25dp"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="#FFFFFF"
-        android:elevation="100dp"
-        android:text="Cidade:"
-        android:textAlignment="viewStart"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvEndereco" />
-
-    <TextView
-        android:id="@+id/tvBairro"
-        android:layout_width="76dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
         android:layout_marginTop="10dp"
         android:backgroundTint="#FFFFFF"
         android:elevation="100dp"
-        android:text="Bairro:"
+        android:text="Endereço:"
         android:textAlignment="viewStart"
         android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/spnCidade" />
-
-    <TextView
-        android:id="@+id/tvRua"
-        android:layout_width="76dp"
-        android:layout_height="22dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#FFFFFF"
-        android:elevation="100dp"
-        android:text="Rua:"
-        android:textAlignment="viewStart"
-        android:textColor="#FFFFFF"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etBairro" />
+        app:layout_constraintTop_toBottomOf="@+id/etDataNasc" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -151,43 +106,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/etEmail" />
-
-    <EditText
-        android:id="@+id/etBairro"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/black"
-        android:backgroundTint="#000000"
-        android:elevation="100dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvBairro" />
-
-    <EditText
-        android:id="@+id/etRua"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="24dp"
-        android:background="@color/black"
-        android:backgroundTint="#000000"
-        android:elevation="100dp"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRua" />
 
     <EditText
         android:id="@+id/etSenha2"
@@ -211,18 +129,18 @@
         android:id="@+id/btnCadastrar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50dp"
-        android:layout_marginEnd="50dp"
-        android:layout_marginBottom="32dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="24dp"
         android:backgroundTint="#5de0e6"
         android:elevation="100dp"
         android:text="Cadastrar"
         android:textColor="#FF000000"
         app:cornerRadius="24dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etEnderecoAluno" />
 
     <EditText
         android:id="@+id/etDataNasc"
@@ -250,8 +168,8 @@
         app:layout_constraintTop_toBottomOf="@+id/tvDataNasc"
         app:srcCompat="@drawable/baseline_calendar_month_24" />
 
-    <Spinner
-        android:id="@+id/spnCidade"
+    <EditText
+        android:id="@+id/etEnderecoAluno"
         android:layout_width="0dp"
         android:layout_height="40dp"
         android:layout_marginStart="24dp"
@@ -261,6 +179,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvCidade" />
+        app:layout_constraintTop_toBottomOf="@+id/tvEndereco" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

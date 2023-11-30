@@ -97,19 +97,13 @@ public class CadastroActivity extends AppCompatActivity {
                     return;
                 }
 
-                EditText etBairro =  findViewById(R.id.etBairro);
-                final String newBairro = etBairro.getText().toString();
-                if(newBairro.isEmpty()) {
-                    Toast.makeText(CadastroActivity.this, "Campo de Bairro não preenchido", Toast.LENGTH_LONG).show();
+                EditText etEndereco =  findViewById(R.id.etEnderecoAluno);
+                final String newEndereco = etEndereco.getText().toString();
+                if(newEndereco.isEmpty()) {
+                    Toast.makeText(CadastroActivity.this, "Campo de Endereço não preenchido", Toast.LENGTH_LONG).show();
                     return;
                 }
 
-                EditText etRua =  findViewById(R.id.etRua);
-                final String newRua = etRua.getText().toString();
-                if(newRua.isEmpty()) {
-                    Toast.makeText(CadastroActivity.this, "Campo de Rua não preenchido", Toast.LENGTH_LONG).show();
-                    return;
-                }
 
                 // O ViewModel possui o método register, que envia as informações para o servidor web.
                 // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
@@ -117,7 +111,7 @@ public class CadastroActivity extends AppCompatActivity {
                 //
                 // O método de register retorna um LiveData, que na prática é um container que avisa
                 // quando o resultado do servidor chegou.
-                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDataNasc);
+                LiveData<Boolean> resultLD = registerViewModel.register(newName, newEmail, newPassword, newDataNasc, newEndereco);
 
                 // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
                 // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o

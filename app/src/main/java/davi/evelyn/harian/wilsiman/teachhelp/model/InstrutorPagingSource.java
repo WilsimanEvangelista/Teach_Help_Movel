@@ -18,12 +18,12 @@ import java.util.concurrent.Executors;
  */
 public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer, Instrutor> {
 
-    InstrutorRepository productsRepository;
+    InstrutorRepository instrutorRepository;
 
     Integer initialLoadSize = 0;
 
     public InstrutorPagingSource(InstrutorRepository productsRepository) {
-        this.productsRepository = productsRepository;
+        this.instrutorRepository = instrutorRepository;
     }
 
     /**

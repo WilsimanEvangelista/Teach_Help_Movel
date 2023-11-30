@@ -11,6 +11,7 @@ import androidx.paging.PagingConfig;
 import androidx.paging.PagingData;
 import androidx.paging.PagingLiveData;
 
+import davi.evelyn.harian.wilsiman.teachhelp.R;
 import kotlinx.coroutines.CoroutineScope;
 
 /**
@@ -18,21 +19,29 @@ import kotlinx.coroutines.CoroutineScope;
  */
 public class HomeViewModel extends AndroidViewModel {
 
-    LiveData<PagingData<Instrutor>> productsLd;
+    LiveData<PagingData<Instrutor>> instrutorLd;
+    Integer selectedNavigationOpId = R.id.optHome;
 
     public HomeViewModel(@NonNull Application application) {
         super(application);
 
-        // Abaixo configuramos o uso da biblioteca de paginação Paging 3, assim como foi feito na
-        // atividade Galeria Pública
-        InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
+        InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
-        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(productsRepository));
-        productsLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
+        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository));
+        instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
     }
 
-    public LiveData<PagingData<Instrutor>> getProductsLd() {
-        return productsLd;
+
+
+    // Método para definir a opção de navegação selecionada
+    public void setNavigationOpSelected(int navigationOpId) {
+        selectedNavigationOpId = navigationOpId;
+    }
+
+    // Método para obter a opção de navegação selecionada
+    public Integer getSelectedNavigationOpId() {
+
+        return selectedNavigationOpId;
     }
 
 }

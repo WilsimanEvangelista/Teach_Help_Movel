@@ -26,7 +26,7 @@ public class InstrutorRepository {
     }
 
 
-    public boolean register(String newName, String newEmail, String newPassword, String newDataNasc) {
+    public boolean register(String newName, String newEmail, String newPassword, String newDataNasc, String newEndereco) {
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
         HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "registrar.php", "POST", "UTF-8");

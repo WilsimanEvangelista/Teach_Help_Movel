@@ -15,6 +15,9 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
+import davi.evelyn.harian.wilsiman.teachhelp.fragments.HomeFragment;
+import davi.evelyn.harian.wilsiman.teachhelp.fragments.InstrutoresFavoritosFragment;
+import davi.evelyn.harian.wilsiman.teachhelp.fragments.PerfilAlunoFragment;
 import davi.evelyn.harian.wilsiman.teachhelp.model.HomeViewModel;
 
 public class HomeActivity extends AppCompatActivity {
@@ -25,7 +28,7 @@ public class HomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        bottomNavigationView = findViewById(R.id.bnvMenu);
+        bottomNavigationView = findViewById(R.id.bnMenu);
         final HomeViewModel vm = new ViewModelProvider(this).get(HomeViewModel.class);
         Integer menuItem = vm.getSelectedNavigationOpId();
 
@@ -34,25 +37,20 @@ public class HomeActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 vm.setNavigationOpSelected(item.getItemId());
                 switch (item.getItemId()) {
-                    case R.id.itemPerfil:
-                        ProfileNaoEditavelFragment profileNaoEditavelFragment = new ProfileNaoEditavelFragment();
-                        setFragment(profileNaoEditavelFragment, R.id.flMenu);
+                    case R.id.optPerfil:
+                        PerfilAlunoFragment perfilAlunoFragment = new PerfilAlunoFragment();
+                        setFragment(perfilAlunoFragment, R.id.frameLayout);
                         setTitle("PERFIL");
                         break;
-                    case R.id.itemMeusEventos:
-                        MyEventsFragment myEventsFragment = new MyEventsFragment();
-                        setFragment(myEventsFragment, R.id.flMenu);
-                        setTitle("MEUS EVENTOS");
+                    case R.id.optFavoritos:
+                        InstrutoresFavoritosFragment instrutoresFavoritosFragment = new InstrutoresFavoritosFragment();
+                        setFragment(instrutoresFavoritosFragment, R.id.frameLayout);
+                        setTitle("INSTRUTORES FAVORITOS");
                         break;
-                    case R.id.itemHome:
+                    case R.id.optHome:
                         HomeFragment homeFragment = new HomeFragment();
-                        setFragment(homeFragment, R.id.flMenu);
+                        setFragment(homeFragment, R.id.frameLayout);
                         setTitle("HOME");
-                        break;
-                    case R.id.itemFavoritos:
-                        FavoriteFragment favoriteFragment = new FavoriteFragment();
-                        setFragment(favoriteFragment, R.id.flMenu);
-                        setTitle("FAVORITOS");
                         break;
                 }
                 return true;
@@ -60,16 +58,6 @@ public class HomeActivity extends AppCompatActivity {
         });
 
         bottomNavigationView.setSelectedItemId(menuItem);
-
-        FloatingActionButton fabCriarEvento = findViewById(R.id.fabCriarEvento);
-        fabCriarEvento.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(HomeActivity.this, CriarEventActivity.class);
-                startActivity(i);
-
-            }
-        });
 
 
     }

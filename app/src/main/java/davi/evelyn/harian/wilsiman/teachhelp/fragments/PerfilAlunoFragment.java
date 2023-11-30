@@ -22,11 +22,6 @@ import davi.evelyn.harian.wilsiman.teachhelp.model.PerfilViewModel;
 import davi.evelyn.harian.wilsiman.teachhelp.model.UserProfile;
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link PerfilAlunoFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
 public class PerfilAlunoFragment extends Fragment {
         private PerfilViewModel PerfilViewModel;
 
