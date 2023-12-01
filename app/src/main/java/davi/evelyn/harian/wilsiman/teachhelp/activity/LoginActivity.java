@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
 import android.Manifest;
 import android.app.AlertDialog;
@@ -20,6 +21,7 @@ import android.widget.Toast;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.LoginViewModel;
+import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 
 
@@ -42,6 +44,9 @@ public class LoginActivity extends AppCompatActivity {
         permissions.add(Manifest.permission.READ_EXTERNAL_STORAGE);
 
         checkForPermissions(permissions);
+
+        // obtemos o ViewModel pois é nele que está o método que se conecta ao servior web.
+        loginViewModel = new ViewModelProvider(this).get(LoginViewModel.class);
 
 
         Button btnLogin = findViewById(R.id.btnLogin);
