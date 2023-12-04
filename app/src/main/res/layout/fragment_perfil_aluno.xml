@@ -15,16 +15,45 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="23dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="8dp"
+        android:src="@android:drawable/ic_dialog_email"
+        app:layout_constraintEnd_toStartOf="@+id/tvEmailAluno"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        tools:layout_editor_absoluteY="551dp" />
+
+    <Button
+        android:id="@+id/btnEditarPerfilAluno"
+        android:layout_width="164dp"
+        android:layout_height="41dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/btnColor"
+        android:gravity="center|end"
+        android:text="Editar perfil"
+        android:textColor="#000000"
+        android:textSize="10sp"
+        app:cornerRadius="48dp"
+        app:icon="@android:drawable/ic_menu_edit"
+        app:iconGravity="start"
+        app:iconSize="20dp"
+        app:iconTint="#000000"
+        app:layout_constraintBottom_toTopOf="@+id/ivPhotoProf"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
     <Button
         android:id="@+id/btnEncerrarSessao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="28dp"
         android:layout_marginEnd="24dp"
         android:backgroundTint="#FF4A4A"
         android:gravity="start"
@@ -37,7 +66,7 @@
         app:iconGravity="start"
         app:iconTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnVirarInstrutor" />
 
@@ -46,12 +75,11 @@
         android:layout_width="340dp"
         android:layout_height="153dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteY="76dp"
         tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
@@ -103,7 +131,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
         android:layout_marginEnd="32dp"
         android:backgroundTint="@color/btnColor"
         android:gravity="start"
@@ -115,39 +142,28 @@
         app:iconGravity="start"
         app:iconTint="#000000"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView12" />
+        tools:layout_editor_absoluteY="603dp" />
 
     <TextView
         android:id="@+id/tvEmailAluno"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
         android:layout_marginBottom="32dp"
         android:hint="label_email"
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/btnVirarInstrutor"
-        app:layout_constraintStart_toEndOf="@+id/imageView12" />
-
-    <ImageView
-        android:id="@+id/imageView12"
-        android:layout_width="23dp"
-        android:layout_height="24dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="8dp"
-        android:src="@android:drawable/ic_dialog_email"
-        app:layout_constraintEnd_toStartOf="@+id/tvEmailAluno"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="519dp" />
+        tools:layout_editor_absoluteX="39dp" />
 
     <ImageButton
-        android:id="@+id/imageButton5"
+        android:id="@+id/imgBtnCamera"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="32dp"
         android:src="@android:drawable/ic_menu_camera"
         app:layout_constraintEnd_toEndOf="parent"
-        tools:layout_editor_absoluteY="118dp" />
+        tools:layout_editor_absoluteY="178dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
