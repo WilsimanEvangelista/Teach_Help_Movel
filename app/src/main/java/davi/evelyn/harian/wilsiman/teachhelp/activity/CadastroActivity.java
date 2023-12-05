@@ -45,7 +45,7 @@ public class CadastroActivity extends AppCompatActivity {
         // obtemos o ViewModel pois é nele que está o método que se conecta ao servior web.
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
 
-        // Quando o usuário clicar no bptão cadastrar
+        // Quando o usuário clicar no botão cadastrar
         Button btnRegister =  findViewById(R.id.btnCadastrar);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
