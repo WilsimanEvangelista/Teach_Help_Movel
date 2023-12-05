@@ -30,15 +30,6 @@ public class AddInstrutorViewModel extends AndroidViewModel {
         this.currentPhotoPath = currentPhotoPath;
     }
 
-    /**
-     * Método que cria e executa uma requisição ao servidor web para adicionar um novo produto no
-     * na base de dados do servidor
-     * @param name nome do produto
-     * @param price preço do produto
-     * @param description descrição do produto
-     * @param imgLocation local onde está salva a imagem do produto
-     * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
-     */
     public LiveData<Boolean> addInstrutor(String newName, String newEmail, String newPassword, String newDescricao) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).

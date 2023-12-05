@@ -14,13 +14,33 @@
         android:src="@mipmap/cover"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
+    <TextView
+        android:id="@+id/tvEmailAluno2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="label_email"
+        android:textColor="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        app:layout_constraintEnd_toStartOf="@+id/tvCurriculo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        tools:layout_editor_absoluteY="442dp" />
+
     <ImageView
-        android:id="@+id/ivPhotoAluno"
+        android:id="@+id/imageView2"
+        android:layout_width="23dp"
+        android:layout_height="24dp"
+        android:layout_marginStart="32dp"
+        android:src="@android:drawable/ic_dialog_email"
+        app:layout_constraintEnd_toStartOf="@+id/tvEmailAluno"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="442dp" />
+
+    <ImageView
+        android:id="@+id/ivPhotoInstrutor"
         android:layout_width="340dp"
         android:layout_height="153dp"
         android:layout_marginStart="32dp"
@@ -42,7 +62,7 @@
         android:textColor="#FFFFFF"
         android:textColorHint="#FFFFFF"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoAluno" />
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoInstrutor" />
 
     <TextView
         android:id="@+id/tvEnderecoProf"
@@ -83,7 +103,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.884"
         app:layout_constraintStart_toEndOf="@+id/tvNomeProf"
-        app:layout_constraintTop_toBottomOf="@+id/ivPhotoAluno"
+        app:layout_constraintTop_toBottomOf="@+id/ivPhotoInstrutor"
         app:layout_constraintVertical_bias="0.608" />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -109,13 +129,12 @@
         android:layout_width="194dp"
         android:layout_height="36dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="label_curriculo"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.883"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDescProf"
         app:layout_constraintVertical_bias="0.118" />
 
