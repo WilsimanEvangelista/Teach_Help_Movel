@@ -26,7 +26,7 @@ public class LoginViewModel extends AndroidViewModel {
      * @param password senha do usuário
      * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
      */
-    public LiveData<Boolean> login(String login, String password) {
+    public LiveData<Boolean> login(String nome, String password) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -53,7 +53,7 @@ public class LoginViewModel extends AndroidViewModel {
                 // O método login envia os dados de autenticação ao servidor. Ele retorna
                 // um booleano indicando true caso o login tenha sido feito com sucesso e false
                 // em caso contrário
-                boolean b = productsRepository.login(login, password);
+                boolean b = productsRepository.login(nome, password);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
