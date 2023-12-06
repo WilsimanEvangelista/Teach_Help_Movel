@@ -26,9 +26,13 @@ public class HomeViewModel extends AndroidViewModel {
         super(application);
 
         InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
+        InstrutorPagingSource galleryPagingSource = new InstrutorPagingSource(instrutorRepository);
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
         Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository));
         instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
+    }
+    public LiveData<PagingData<Instrutor>> getPageLv() {
+        return pageLv;
     }
 
 

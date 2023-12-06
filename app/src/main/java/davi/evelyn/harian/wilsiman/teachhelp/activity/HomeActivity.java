@@ -139,8 +139,8 @@ public class HomeActivity extends AppCompatActivity {
 
         }
         else{
-            MainViewModel vm = new ViewModelProvider(this).get(MainViewModel.class);
-            int navigationOpSelected = vm.getNavigationOpSelected();
+            HomeViewModel vm = new ViewModelProvider(this).get(HomeViewModel.class);
+            int navigationOpSelected = vm.getSelectedNavigationOpId();
             bottomNavigationView.setSelectedItemId(navigationOpSelected);
         }
     }
