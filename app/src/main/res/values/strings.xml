@@ -7,5 +7,11 @@
     <string name="btnVoltar">Voltar</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string-array name="materias">
+        <string name="todos">todas as materias</string>
+        <string name="matematica">matematica</string>
+        <string name="portugues">portugues</string>
+        <string name="esportes">esportes</string>
+    </string-array>
 </resources>
 

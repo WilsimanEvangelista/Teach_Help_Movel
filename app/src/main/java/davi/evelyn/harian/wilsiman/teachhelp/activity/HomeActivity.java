@@ -9,22 +9,19 @@ import androidx.lifecycle.ViewModelProvider;
 import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationBarView;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
-import davi.evelyn.harian.wilsiman.teachhelp.fragments.HomeFragment;
+import davi.evelyn.harian.wilsiman.teachhelp.fragments.InstrutoresFragment;
 import davi.evelyn.harian.wilsiman.teachhelp.fragments.InstrutoresFavoritosFragment;
 import davi.evelyn.harian.wilsiman.teachhelp.fragments.PerfilAlunoFragment;
 import davi.evelyn.harian.wilsiman.teachhelp.model.HomeViewModel;
@@ -58,7 +55,7 @@ public class HomeActivity extends AppCompatActivity {
                         setTitle("INSTRUTORES FAVORITOS");
                         break;
                     case R.id.optHome:
-                        HomeFragment homeFragment = new HomeFragment();
+                        InstrutoresFragment homeFragment = new InstrutoresFragment();
                         setFragment(homeFragment, R.id.frameLayout);
                         setTitle("HOME");
                         break;

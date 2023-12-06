@@ -132,7 +132,7 @@ public class InstrutorRepository {
     }
 
 
-    public boolean addInstrutor(String foto, String endereco, String descricao, String curriculo) {
+    public boolean addInstrutor(String foto, String endereco, String descricao,String materia) {
 
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
@@ -144,6 +144,8 @@ public class InstrutorRepository {
         httpRequest.addParam("foto", foto);
         httpRequest.addParam("endereco", endereco);
         httpRequest.addParam("descricao", descricao);
+        httpRequest.addParam("materia", materia);
+        httpRequest.addParam("curriculo", curriculo);
         httpRequest.addFile("foto", new File(foto));
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do

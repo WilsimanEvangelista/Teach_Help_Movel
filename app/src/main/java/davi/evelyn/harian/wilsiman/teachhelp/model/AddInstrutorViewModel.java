@@ -30,7 +30,7 @@ public class AddInstrutorViewModel extends AndroidViewModel {
         this.currentPhotoPath = currentPhotoPath;
     }
 
-    public LiveData<Boolean> addInstrutor(String newName, String newEmail, String newPassword, String newDescricao) {
+    public LiveData<Boolean> addInstrutor(String newDescricao, String newFoto, String materia, String curriculo) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Boolean> result = new MutableLiveData<>();
@@ -56,7 +56,7 @@ public class AddInstrutorViewModel extends AndroidViewModel {
                 // O método addProduct envia os dados de um novo produto ao servidor. Ele retorna
                 // um booleano indicando true caso o produto tenha sido cadastrado e false
                 // em caso contrário
-                boolean b = instrutorRepository.addInstrutor(newName, newEmail, newPassword, newDescricao);
+                boolean b = instrutorRepository.addInstrutor(newDescricao, newFoto, materia, curriculo);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.

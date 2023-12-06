@@ -14,23 +14,20 @@ import androidx.paging.PagingLiveData;
 import davi.evelyn.harian.wilsiman.teachhelp.R;
 import kotlinx.coroutines.CoroutineScope;
 
-/**
- * ViewModel referente a HomeActivity
- */
-public class HomeViewModel extends AndroidViewModel {
-
+public class InstrutoresFavoritosViewModel extends AndroidViewModel {
     LiveData<PagingData<Instrutor>> instrutorLd;
     Integer selectedNavigationOpId = R.id.optHome;
 
-    public HomeViewModel(@NonNull Application application) {
+    public InstrutoresFavoritosViewModel(@NonNull Application application) {
         super(application);
 
         InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
+        InstrutorPagingSource galleryPagingSource = new InstrutorPagingSource(instrutorRepository);
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
         Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository));
         instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
     }
-    public LiveData<PagingData<Instrutor>> getPageLv() {
+    public LiveData<PagingData<Instrutor>> getPage2Lv() {
         return instrutorLd;
     }
 
@@ -46,6 +43,4 @@ public class HomeViewModel extends AndroidViewModel {
 
         return selectedNavigationOpId;
     }
-
-
 }
