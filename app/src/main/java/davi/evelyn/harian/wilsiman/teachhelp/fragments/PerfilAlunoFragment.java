@@ -23,12 +23,12 @@ import davi.evelyn.harian.wilsiman.teachhelp.model.UserProfile;
 import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 
 public class PerfilAlunoFragment extends Fragment {
-        private PerfilViewModel PerfilViewModel;
+        private PerfilViewModel perfilViewModel;
 
         @Override
         public void onCreate(@Nullable Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            PerfilViewModel = new ViewModelProvider(requireActivity()).get(PerfilViewModel.class);
+            perfilViewModel = new ViewModelProvider(requireActivity()).get(PerfilViewModel.class);
         }
 
         @Override
@@ -40,9 +40,8 @@ public class PerfilAlunoFragment extends Fragment {
         @Override
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
-            PerfilViewModel vm = new ViewModelProvider(getActivity()).get(PerfilViewModel.class);
 
-            LiveData<UserProfile> userProfileLD = vm.getUserProfile();
+            LiveData<UserProfile> userProfileLD = perfilViewModel.getUserProfile();
 
             userProfileLD.observe(getViewLifecycleOwner(), new Observer<UserProfile>() {
                 @Override
