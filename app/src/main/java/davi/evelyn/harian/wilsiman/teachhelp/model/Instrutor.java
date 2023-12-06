@@ -1,5 +1,7 @@
 package davi.evelyn.harian.wilsiman.teachhelp.model;
 
+import android.graphics.Bitmap;
+
 import java.util.Date;
 
 /**
@@ -7,10 +9,10 @@ import java.util.Date;
  */
 public class Instrutor {
     String id, nome, descricao, endereco, email, curriculo;
-    int foto;
+    public Bitmap foto;
     Date data_nascimento;
 
-    public Instrutor(String id, String nome, String descricao, String endereco, String email,String curriculo, int foto, Date data_nascimento){
+    public Instrutor(String id, String nome, String descricao, String endereco, String email,String curriculo, Bitmap foto, Date data_nascimento){
         this.id = id;
         this.nome = nome;
         this.descricao = descricao;

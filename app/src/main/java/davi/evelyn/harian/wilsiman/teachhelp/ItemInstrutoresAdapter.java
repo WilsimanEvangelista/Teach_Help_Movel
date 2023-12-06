@@ -10,9 +10,11 @@ import androidx.annotation.NonNull;
 import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 
-public class ItemInstrutoresAdapter extends PagingDataAdapter<ImageData, MyViewHolder> {
+import davi.evelyn.harian.wilsiman.teachhelp.model.Instrutor;
 
-    public GridAdapter(@NonNull DiffUtil.ItemCallback<ImageData> diffCallback) {
+public class ItemInstrutoresAdapter extends PagingDataAdapter<Instrutor, MyViewHolder> {
+
+    public ItemInstrutoresAdapter(@NonNull DiffUtil.ItemCallback<Instrutor> diffCallback) {
         super(diffCallback);
     }
     @NonNull
@@ -20,15 +22,15 @@ public class ItemInstrutoresAdapter extends PagingDataAdapter<ImageData, MyViewH
 
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.grid_item, parent, false);
+        View view = layoutInflater.inflate(R.layout.list_item_instrutores, parent, false);
         return new MyViewHolder(view);
     }
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        ImageData imageData = getItem(position);
+        Instrutor imageData = getItem(position);
 
-        Bitmap thumb = imageData.thumb;
-        ImageView imageView = holder.itemView.findViewById(R.id.imThumb);
+        Bitmap thumb = imageData.foto;
+        ImageView imageView = holder.itemView.findViewById(R.id.imgButton);
         imageView.setImageBitmap(thumb);
     }
 }
