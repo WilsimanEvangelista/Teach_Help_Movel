@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -56,10 +57,13 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                     return;
                 }
 
-                // Supondo que você tenha um Spinner com o ID spnMateria
                 Spinner spnMaterias = findViewById(R.id.spnMaterias);
-                // Criar um ArrayAdapter usando o array de matérias
 
+                ImageView fotoInstrutor = findViewById(R.id.imvFotoInstrutor);
+                if (fotoInstrutor.getDrawable() == null) {
+                    Toast.makeText(CadastroInstrutorActivity.this, "Foto não preenchida", Toast.LENGTH_LONG).show();
+                    return;
+                }
 
 
             }
