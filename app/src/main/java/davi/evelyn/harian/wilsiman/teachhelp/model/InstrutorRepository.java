@@ -264,8 +264,16 @@ public class InstrutorRepository {
                 String email = jsonObject.getString("email");
                 String descricao = jsonObject.getString("descricao");
                 String dt_nasc = jsonObject.getString("dt_nasc");
-                String endereco = jsonObject.getString("estado");
+                String endereco = jsonObject.getString("endereco");
                 String img = jsonObject.getString("foto");
+                String professor = jsonObject.getString("professor");
+
+                String materia = "";
+                String curriculo = "";
+                if(professor.equals("sim")) {
+                    curriculo = jsonObject.getString("curriculo");
+                    materia = jsonObject.getString("materia");
+                }
 
                 // Cria um objeto Product e guarda os detalhes do produto dentro dele.
                 UserProfile p = new UserProfile();
@@ -275,6 +283,9 @@ public class InstrutorRepository {
                 p.endereco = endereco;
                 p.img = img;
                 p.dt_nasc = dt_nasc;
+                p.professor = professor;
+                p.materia = materia;
+                p.curriculo = curriculo;
                 return p;
             }
         } catch (IOException e) {

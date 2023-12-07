@@ -10,6 +10,7 @@ public class UserProfile {
     public String dt_nasc; // data nascimento do usuario
     public String img; // url da imagem do usuario
     public String curriculo; // curriculo do instrutor
+    public String materia; // curriculo do instrutor
 
     public String professor; // email do usuario
 
