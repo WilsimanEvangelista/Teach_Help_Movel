@@ -20,6 +20,7 @@ import org.jetbrains.annotations.Nullable;
 import davi.evelyn.harian.wilsiman.teachhelp.InstrutorComparator;
 import davi.evelyn.harian.wilsiman.teachhelp.ItemInstrutoresAdapter;
 import davi.evelyn.harian.wilsiman.teachhelp.R;
+import davi.evelyn.harian.wilsiman.teachhelp.activity.HomeActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.model.HomeViewModel;
 import davi.evelyn.harian.wilsiman.teachhelp.model.Instrutor;
 import davi.evelyn.harian.wilsiman.teachhelp.model.InstrutoresFavoritosViewModel;
@@ -82,21 +83,24 @@ public class InstrutoresFavoritosFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        InstrutoresFavoritosViewModel = new ViewModelProvider(getActivity()).get(HomeViewModel.class);
-        ItemInstrutoresAdapter itemInstrutoresAdapter = new ItemInstrutoresAdapter(new InstrutorComparator());
-        LiveData<PagingData<Instrutor>> liveData = InstrutoresFavoritosViewModel.getPage2LV();
+
+        RecyclerView rvInstrutoresFavoritos = (RecyclerView) view.findViewById(R.id.rvInstrutoresFavoritos);
+
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
+        rvInstrutoresFavoritos.setLayoutManager(gridLayoutManager);
+
+        instrutoresFavoritosViewModel = new ViewModelProvider(getActivity()).get(InstrutoresFavoritosViewModel.class);
+
+        ItemInstrutoresAdapter itemInstrutoresAdapter = new ItemInstrutoresAdapter((HomeActivity) getActivity(),new InstrutorComparator());
+        rvInstrutoresFavoritos.setAdapter(itemInstrutoresAdapter);
+        LiveData<PagingData<Instrutor>> liveData = instrutoresFavoritosViewModel.getPage2Lv();
         liveData.observe(getViewLifecycleOwner(), new Observer<PagingData<Instrutor>>() {
             @Override
             public void onChanged(PagingData<Instrutor> objectPagingData) {
-                ItemInstrutoresAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectPagingData);
+                itemInstrutoresAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectPagingData);
             }
         });
-        RecyclerView rvGallery = (RecyclerView) view.findViewById(R.id.rvMenu);
-        rvGallery.setAdapter(itemInstrutoresAdapterAdapter);
-        float w = getResources().getDimension(R.dimen.im_width);
-        int numberOfColumns = Util.calculateNoOfColumns(getContext(), w);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), numberOfColumns);
-        rvGallery.setLayoutManager(gridLayoutManager);,
+
 
     }
 }

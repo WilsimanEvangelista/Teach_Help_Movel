@@ -132,7 +132,7 @@ public class InstrutorRepository {
     }
 
 
-    public boolean addInstrutor(String foto, String endereco, String descricao,String materia) {
+    public boolean addInstrutor(String foto, String endereco, String descricao,String materia, String curriculo) {
 
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
