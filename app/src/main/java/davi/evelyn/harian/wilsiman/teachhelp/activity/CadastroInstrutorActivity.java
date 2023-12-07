@@ -6,8 +6,10 @@ import androidx.lifecycle.ViewModelProvider;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import davi.evelyn.harian.wilsiman.teachhelp.R;
@@ -28,7 +30,7 @@ public class CadastroInstrutorActivity extends CadastroActivity {
         // obtemos o ViewModel pois é nele que está o método que se conecta ao servior web.
         registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
 
-        // Quando o usuário clicar no botão cadastrar
+        // Quando o usuário clicar no bptão cadastrar
         Button btnRegister =  findViewById(R.id.btnSalvar);
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -47,7 +49,6 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                     return;
                 }
 
-
                 EditText etCurriculo =  findViewById(R.id.etCurriculoCadastro);
                 final String newCurriculo = etCurriculo.getText().toString();
                 if(newCurriculo.isEmpty()) {
@@ -55,14 +56,17 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                     return;
                 }
 
+                // Supondo que você tenha um Spinner com o ID spnMateria
+                Spinner spnMaterias = findViewById(R.id.spnMaterias);
+                // Criar um ArrayAdapter usando o array de matérias
+                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
+                        this,
+                        R.array.materias,
+                        android.R.layout.simple_spinner_item
+                );
+                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                spnMaterias.setAdapter(adapter);
 
-
-                // O ViewModel possui o método register, que envia as informações para o servidor web.
-                // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
-                // com sucesso, a app recebe o valor true. Se não o servidor retorna o valor false.
-                //
-                // O método de register retorna um LiveData, que na prática é um container que avisa
-                // quando o resultado do servidor chegou.
 
             }
         });

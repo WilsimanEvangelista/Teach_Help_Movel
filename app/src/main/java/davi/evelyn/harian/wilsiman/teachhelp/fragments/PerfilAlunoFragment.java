@@ -16,6 +16,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import davi.evelyn.harian.wilsiman.teachhelp.activity.CadastroInstrutorActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.activity.LoginActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.R;
 import davi.evelyn.harian.wilsiman.teachhelp.model.PerfilViewModel;
@@ -74,6 +75,17 @@ public class PerfilAlunoFragment extends Fragment {
 
                     // Redirecione o usuário para a tela de login
                     Intent intent = new Intent(requireActivity(), LoginActivity.class);
+                    startActivity(intent);
+                }
+            });
+
+            // Supondo que você tem um botão "Quero me tornar um instrutor" em sua activity de aluno
+            Button btnTornarInstrutor = view.findViewById(R.id.btnVirarInstrutor);
+
+            btnTornarInstrutor.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(requireActivity(), CadastroInstrutorActivity.class);
                     startActivity(intent);
                 }
             });
