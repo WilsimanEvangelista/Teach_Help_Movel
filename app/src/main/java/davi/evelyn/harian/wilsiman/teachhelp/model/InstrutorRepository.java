@@ -214,7 +214,7 @@ public class InstrutorRepository {
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "pegar_detalhes_usuario.php", "GET", "UTF-8");
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "pegar_detalhes_perfil.php", "GET", "UTF-8");
         httpRequest.addParam("email", login);
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do
@@ -262,8 +262,10 @@ public class InstrutorRepository {
                 // que os dados trafeguem mais rápido.
                 String name = jsonObject.getString("nome");
                 String email = jsonObject.getString("email");
-                String descricao = jsonObject.getString("data_nasc");
+                String descricao = jsonObject.getString("descricao");
+                String dt_nasc = jsonObject.getString("dt_nasc");
                 String endereco = jsonObject.getString("estado");
+                String img = jsonObject.getString("foto");
 
                 // Cria um objeto Product e guarda os detalhes do produto dentro dele.
                 UserProfile p = new UserProfile();
@@ -271,6 +273,8 @@ public class InstrutorRepository {
                 p.email = email;
                 p.descricao = descricao;
                 p.endereco = endereco;
+                p.img = img;
+                p.dt_nasc = dt_nasc;
                 return p;
             }
         } catch (IOException e) {

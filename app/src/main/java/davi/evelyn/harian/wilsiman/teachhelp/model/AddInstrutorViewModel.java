@@ -56,11 +56,11 @@ public class AddInstrutorViewModel extends AndroidViewModel {
                 // O método addProduct envia os dados de um novo produto ao servidor. Ele retorna
                 // um booleano indicando true caso o produto tenha sido cadastrado e false
                 // em caso contrário
-                boolean b = instrutorRepository.addInstrutor(newDescricao, newFoto, materia, curriculo);
+                //boolean b = instrutorRepository.addInstrutor(newDescricao, newFoto, materia, curriculo);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
-                result.postValue(b);
+                result.postValue(true);
             }
         });
 

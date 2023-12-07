@@ -22,7 +22,7 @@ public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer,
 
     Integer initialLoadSize = 0;
 
-    public InstrutorPagingSource(InstrutorRepository productsRepository) {
+    public InstrutorPagingSource(InstrutorRepository instrutorRepository) {
         this.instrutorRepository = instrutorRepository;
     }
 

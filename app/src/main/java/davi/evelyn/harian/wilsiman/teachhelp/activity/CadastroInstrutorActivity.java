@@ -59,13 +59,7 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                 // Supondo que você tenha um Spinner com o ID spnMateria
                 Spinner spnMaterias = findViewById(R.id.spnMaterias);
                 // Criar um ArrayAdapter usando o array de matérias
-                ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-                        this,
-                        R.array.materias,
-                        android.R.layout.simple_spinner_item
-                );
-                adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-                spnMaterias.setAdapter(adapter);
+
 
 
             }

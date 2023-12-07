@@ -5,13 +5,11 @@
     <string name="etSenha">Senha:</string>
     <string name="btnRecSenha">Enviar Código</string>
     <string name="btnVoltar">Voltar</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string-array name="materias">
-        <string name="todos">todas as materias</string>
-        <string name="matematica">matematica</string>
-        <string name="portugues">portugues</string>
-        <string name="esportes">esportes</string>
+        <item name="todos">todas as materias</item>
+        <item name="matematica">matematica</item>
+        <item name="portugues">portugues</item>
+        <item name="esportes">esportes</item>
     </string-array>
 </resources>
 

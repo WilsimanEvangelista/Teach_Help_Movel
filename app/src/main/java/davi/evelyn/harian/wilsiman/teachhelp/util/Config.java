@@ -9,7 +9,7 @@ import android.content.SharedPreferences;
 public class Config {
 
     // endereço base do servidor web
-    public static String TEACHHELP_APP_URL = "https://teachhelp-1jrzb695.b4a.run/mobile/";
+    public static String TEACHHELP_APP_URL = "https://teachhelp-a66yxe07.b4a.run/mobile/";
 
 
     public static void setLogin(Context context, String email) {

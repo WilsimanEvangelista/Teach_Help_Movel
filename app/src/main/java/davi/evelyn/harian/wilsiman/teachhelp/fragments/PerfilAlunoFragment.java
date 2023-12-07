@@ -71,7 +71,8 @@ public class PerfilAlunoFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     // Limpe as informações de login (se necessário)
-                    Config.setLogin(requireContext(), "");
+                    Config.setLogin(getActivity(), "");
+                    Config.setPassword(getActivity(), "");
 
                     // Redirecione o usuário para a tela de login
                     Intent intent = new Intent(requireActivity(), LoginActivity.class);
