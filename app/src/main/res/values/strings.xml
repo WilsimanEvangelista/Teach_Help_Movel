@@ -6,9 +6,9 @@
     <string name="btnRecSenha">Enviar Código</string>
     <string name="btnVoltar">Voltar</string>
     <string-array name="materias">
-        <item name="Todas">Todas</item>
-        <item name="Matemática">Matemática</item>
-        <item name="Português">Português</item>
+        <item name="todas">Todas</item>
+        <item name="matematica">Matemática</item>
+        <item name="portugues">Português</item>
         <item name="esportes">Esportes</item>
     </string-array>
 </resources>

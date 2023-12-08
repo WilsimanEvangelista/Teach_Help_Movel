@@ -133,7 +133,7 @@ public class InstrutorRepository {
     }
 
 
-    public boolean addInstrutor(String foto, String endereco, String descricao,String materia, String curriculo) {
+    public boolean addInstrutor(String descricao,String materia, String curriculo) {
 
         // Para cadastrar um produto, é preciso estar logado. Então primeiro otemos o login e senha
         // salvos na app.
@@ -141,13 +141,11 @@ public class InstrutorRepository {
         String password = Config.getPassword(context);
 
         // Cria uma requisição HTTP a adiona o parâmetros que devem ser enviados ao servidor
-        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "criar_produto.php", "POST", "UTF-8");
-        httpRequest.addParam("foto", foto);
-        httpRequest.addParam("endereco", endereco);
-        httpRequest.addParam("descricao", descricao);
-        httpRequest.addParam("materia", materia);
-        httpRequest.addParam("curriculo", curriculo);
-        httpRequest.addFile("foto", new File(foto));
+        HttpRequest httpRequest = new HttpRequest(Config.TEACHHELP_APP_URL + "cadastroProf.php", "POST", "UTF-8");
+        httpRequest.addParam("email", login);
+        httpRequest.addParam("nova_descricao", descricao);
+        httpRequest.addParam("nova_materia", materia);
+        httpRequest.addParam("novo_curriculo", curriculo);
 
         // Para esta ação, é preciso estar logado. Então na requisição HTTP setamos o login e senha do
         // usuário. Ao executar a requisição, o login e senha do usuário serão enviados ao servidor web,
@@ -185,7 +183,7 @@ public class InstrutorRepository {
             JSONObject jsonObject = new JSONObject(result);
 
             // obtem o valor da chave sucesso para verificar se a ação ocorreu da forma esperada ou não.
-            int success = jsonObject.getInt("sucesso");
+            int success = jsonObject.getInt("sucess");
 
             // Se sucesso igual a 1, significa que o produto foi adicionado com sucesso.
             if(success == 1) {

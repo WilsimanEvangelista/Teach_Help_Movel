@@ -42,6 +42,9 @@ public class PerfilAlunoFragment extends Fragment {
         public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
             super.onViewCreated(view, savedInstanceState);
 
+            // Supondo que você tem um botão "Quero me tornar um instrutor" em sua activity de aluno
+            Button btnTornarInstrutor = view.findViewById(R.id.btnVirarInstrutor);
+
             LiveData<UserProfile> userProfileLD = perfilViewModel.getUserProfile();
 
             userProfileLD.observe(getViewLifecycleOwner(), new Observer<UserProfile>() {
@@ -58,6 +61,10 @@ public class PerfilAlunoFragment extends Fragment {
 
                     TextView tvEmail = view.findViewById(R.id.tvEmailAluno);
                     tvEmail.setText(userProfile.email);
+
+                    if(userProfile.professor.equals("sim")) {
+                        btnTornarInstrutor.setVisibility(View.INVISIBLE);
+                    }
 
                 }
             });
@@ -80,8 +87,7 @@ public class PerfilAlunoFragment extends Fragment {
                 }
             });
 
-            // Supondo que você tem um botão "Quero me tornar um instrutor" em sua activity de aluno
-            Button btnTornarInstrutor = view.findViewById(R.id.btnVirarInstrutor);
+
 
             btnTornarInstrutor.setOnClickListener(new View.OnClickListener() {
                 @Override
