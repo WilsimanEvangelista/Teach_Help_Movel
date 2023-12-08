@@ -27,6 +27,9 @@
             android:name=".activity.ActivityEditarPerfilAluno"
             android:exported="false" />
         <activity
+            android:name=".activity.CadastroInstrutorActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.PerfilInstrutorActivity"
             android:exported="false" />
         <activity

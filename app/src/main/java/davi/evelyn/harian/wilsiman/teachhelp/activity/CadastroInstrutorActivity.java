@@ -21,7 +21,7 @@ import davi.evelyn.harian.wilsiman.teachhelp.model.RegisterViewModel;
 public class CadastroInstrutorActivity extends CadastroActivity {
 
 
-    RegisterViewModel registerViewModel;
+    CadastroInstrutorViewModel cadastroInstrutorViewModel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +29,7 @@ public class CadastroInstrutorActivity extends CadastroActivity {
         setContentView(R.layout.activity_cadastro_instrutor);
 
         // obtemos o ViewModel pois é nele que está o método que se conecta ao servior web.
-        registerViewModel = new ViewModelProvider(this).get(RegisterViewModel.class);
+        cadastroInstrutorViewModel = new ViewModelProvider(this).get(CadastroInstrutorViewModel.class);
 
         // Quando o usuário clicar no bptão cadastrar
         Button btnRegister =  findViewById(R.id.btnSalvar);
@@ -58,14 +58,37 @@ public class CadastroInstrutorActivity extends CadastroActivity {
                 }
 
                 Spinner spnMaterias = findViewById(R.id.spnMaterias);
+                String materia = spnMaterias.getSelectedItem().toString();
 
-                ImageView fotoInstrutor = findViewById(R.id.imvFotoInstrutor);
-                if (fotoInstrutor.getDrawable() == null) {
-                    Toast.makeText(CadastroInstrutorActivity.this, "Foto não preenchida", Toast.LENGTH_LONG).show();
-                    return;
-                }
+                // O ViewModel possui o método register, que envia as informações para o servidor web.
+                // O servidor web recebe as infos e cadastra um novo usuário. Se o usuário foi cadastrado
+                // com sucesso, a app recebe o valor true. Se não o servidor retorna o valor false.
+                //
+                // O método de register retorna um LiveData, que na prática é um container que avisa
+                // quando o resultado do servidor chegou.
+                LiveData<Boolean> resultLD = cadastroInstrutorViewModel.cadastroInstrutor(newDescricaoInstrutor, newCurriculo, materia);
 
-
+                // Aqui nós observamos o LiveData. Quando o servidor responder, o resultado indicando
+                // se o cadastro deu certo ou não será guardado dentro do LiveData. Neste momento o
+                // LiveData avisa que o resultado chegou chamando o método onChanged abaixo.
+                resultLD.observe(CadastroInstrutorActivity.this, new Observer<Boolean>() {
+                    @Override
+                    public void onChanged(Boolean aBoolean) {
+                        // aBoolean contém o resultado do cadastro. Se aBoolean for true, significa
+                        // que o cadastro do usuário foi feito corretamente. Indicamos isso ao usuário
+                        // através de uma mensagem do tipo toast e finalizamos a Activity. Quando
+                        // finalizamos a Activity, voltamos para a tela de login.
+                        if(aBoolean) {
+                            Toast.makeText(CadastroInstrutorActivity.this, "Você se tornou um instrutor", Toast.LENGTH_LONG).show();
+                            finish();
+                        }
+                        else {
+                            // Se o cadastro não deu certo, apenas continuamos na tela de cadastro e
+                            // indicamos com uma mensagem ao usuário que o cadastro não deu certo.
+                            Toast.makeText(CadastroInstrutorActivity.this, "Erro ao tentar se tornar um instrutor", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
             }
         });
     }
