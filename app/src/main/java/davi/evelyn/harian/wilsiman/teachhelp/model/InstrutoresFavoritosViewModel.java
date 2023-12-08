@@ -21,11 +21,11 @@ public class InstrutoresFavoritosViewModel extends AndroidViewModel {
     public InstrutoresFavoritosViewModel(@NonNull Application application) {
         super(application);
 
-        InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
+        /*InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
         InstrutorPagingSource galleryPagingSource = new InstrutorPagingSource(instrutorRepository);
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
         Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository));
-        instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
+        instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);*/
     }
     public LiveData<PagingData<Instrutor>> getPage2Lv() {
         return instrutorLd;

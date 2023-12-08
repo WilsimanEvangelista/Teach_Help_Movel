@@ -9,17 +9,22 @@ import java.util.Date;
  */
 public class Instrutor {
 
+    public String id_instrutor;
+    public String id_aluno;
+
     public String nome;
     public String descricao;
-    public String endereco;
+    public static String endereco;
     public String email;
     public String curriculo;
     public String materia;
 
     public String foto;
-    Date data_nascimento;
+    public String data_nascimento;
 
-    public Instrutor(String nome, String descricao, String endereco, String email,String curriculo, String materia, String foto, Date data_nascimento){
+    public Instrutor(String id_instrutor, String id_aluno, String nome, String descricao, String endereco, String email,String curriculo, String materia, String foto, String data_nascimento){
+        this.id_aluno = id_aluno;
+        this.id_instrutor = id_instrutor;
         this.nome = nome;
         this.descricao = descricao;
         this.endereco = endereco;
@@ -28,6 +33,10 @@ public class Instrutor {
         this.materia = materia;
         this.foto = foto;
         this.data_nascimento = data_nascimento;
+
+    }
+
+    public Instrutor(){
 
     }
 }

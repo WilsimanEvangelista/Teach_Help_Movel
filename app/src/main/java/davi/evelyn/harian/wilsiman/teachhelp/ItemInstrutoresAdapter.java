@@ -1,5 +1,6 @@
 package davi.evelyn.harian.wilsiman.teachhelp;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +12,9 @@ import androidx.paging.PagingDataAdapter;
 import androidx.recyclerview.widget.DiffUtil;
 
 import davi.evelyn.harian.wilsiman.teachhelp.activity.HomeActivity;
+import davi.evelyn.harian.wilsiman.teachhelp.activity.PerfilInstrutorActivity;
 import davi.evelyn.harian.wilsiman.teachhelp.model.Instrutor;
+import davi.evelyn.harian.wilsiman.teachhelp.util.Config;
 import davi.evelyn.harian.wilsiman.teachhelp.util.ImageCache;
 
 public class ItemInstrutoresAdapter extends PagingDataAdapter<Instrutor, MyViewHolder> {
@@ -41,14 +44,30 @@ public class ItemInstrutoresAdapter extends PagingDataAdapter<Instrutor, MyViewH
 
         ImageView imgInstrutor = holder.itemView.findViewById(R.id.imgInstrutor);
 
+
+        if(instrutor.foto == null) {
+            imgInstrutor.setImageResource(R.drawable.no_image);
+        }
+        else {
+            ImageCache.loadImageUrlToImageView(homeActivity, Config.TEACHHELP_APP_RAIZ_URL + instrutor.foto, imgInstrutor, holder.w, -1);
+        }
         // somente agora o a imagem é obtida do servidor. Caso a imagem já esteja salva no cache da app,
         // não baixamos ela de novo
-        ImageCache.loadImageUrlToImageView(homeActivity, instrutor.foto, imgInstrutor, holder.w, -1);
+        //ImageCache.loadImageUrlToImageView(homeActivity, instrutor.foto, imgInstrutor, holder.w, -1);
 
         TextView tvNome = holder.itemView.findViewById(R.id.tvNome);
         tvNome.setText(instrutor.nome);
 
         TextView tvDescricao = holder.itemView.findViewById(R.id.tvDescricao);
         tvDescricao.setText(instrutor.descricao);
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(homeActivity, PerfilInstrutorActivity.class);
+                i.putExtra("idAluno", instrutor.id_aluno);
+                homeActivity.startActivity(i);
+            }
+        });
     }
 }

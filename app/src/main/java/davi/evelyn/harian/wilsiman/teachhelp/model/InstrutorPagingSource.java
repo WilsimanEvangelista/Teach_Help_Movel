@@ -20,10 +20,13 @@ public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer,
 
     InstrutorRepository instrutorRepository;
 
+    String materia;
+
     Integer initialLoadSize = 0;
 
-    public InstrutorPagingSource(InstrutorRepository instrutorRepository) {
+    public InstrutorPagingSource(InstrutorRepository instrutorRepository, String materia) {
         this.instrutorRepository = instrutorRepository;
+        this.materia = materia;
     }
 
     /**
@@ -83,7 +86,7 @@ public class InstrutorPagingSource extends ListenableFuturePagingSource<Integer,
             public LoadResult<Integer, Instrutor> call() {
                 List<Instrutor> instrutorList = null;
                 // envia uma requisição para o servidor web pedindo por uma nova página de dados (bloco de produtos)
-                instrutorList = instrutorRepository.loadInstrutor(loadParams.getLoadSize(), finalOffSet);
+                instrutorList = instrutorRepository.loadInstrutores(loadParams.getLoadSize(), finalOffSet, materia);
                 Integer nextKey = null;
                 if(instrutorList.size() >= loadParams.getLoadSize()) {
                     nextKey = finalNextPageNumber + 1;

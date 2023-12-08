@@ -14,6 +14,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -84,6 +87,8 @@ public class InstrutoresFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        Spinner spMateria = view.findViewById(R.id.spMaterias);
+
         RecyclerView rvInstrutores = (RecyclerView) view.findViewById(R.id.rvInstrutores);
 
         GridLayoutManager gridLayoutManager = new GridLayoutManager(getContext(), 2);
@@ -93,11 +98,32 @@ public class InstrutoresFragment extends Fragment {
 
         ItemInstrutoresAdapter itemInstrutoresAdapter = new ItemInstrutoresAdapter((HomeActivity) getActivity(),new InstrutorComparator());
         rvInstrutores.setAdapter(itemInstrutoresAdapter);
-        LiveData<PagingData<Instrutor>> liveData = homeViewModel.getPageLv();
+        LiveData<PagingData<Instrutor>> liveData = homeViewModel.getIntrutoresLD(spMateria.getSelectedItem().toString());
         liveData.observe(getViewLifecycleOwner(), new Observer<PagingData<Instrutor>>() {
             @Override
             public void onChanged(PagingData<Instrutor> objectPagingData) {
                 itemInstrutoresAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectPagingData);
+            }
+        });
+
+        spMateria.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                ItemInstrutoresAdapter itemInstrutoresAdapter = new ItemInstrutoresAdapter((HomeActivity) getActivity(),new InstrutorComparator());
+                rvInstrutores.setAdapter(itemInstrutoresAdapter);
+                LiveData<PagingData<Instrutor>> liveData = homeViewModel.getIntrutoresLD(spMateria.getSelectedItem().toString());
+                liveData.observe(getViewLifecycleOwner(), new Observer<PagingData<Instrutor>>() {
+                    @Override
+                    public void onChanged(PagingData<Instrutor> objectPagingData) {
+                        itemInstrutoresAdapter.submitData(getViewLifecycleOwner().getLifecycle(),objectPagingData);
+                    }
+                });
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
             }
         });
 

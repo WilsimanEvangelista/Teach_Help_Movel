@@ -6,10 +6,10 @@
     <string name="btnRecSenha">Enviar Código</string>
     <string name="btnVoltar">Voltar</string>
     <string-array name="materias">
-        <item name="todos">todas as materias</item>
-        <item name="matematica">matematica</item>
-        <item name="portugues">portugues</item>
-        <item name="esportes">esportes</item>
+        <item name="Todas">Todas</item>
+        <item name="Matemática">Matemática</item>
+        <item name="Português">Português</item>
+        <item name="esportes">Esportes</item>
     </string-array>
 </resources>
 

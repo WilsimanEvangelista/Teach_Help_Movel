@@ -25,16 +25,15 @@ public class HomeViewModel extends AndroidViewModel {
     public HomeViewModel(@NonNull Application application) {
         super(application);
 
+
+    }
+    public LiveData<PagingData<Instrutor>> getIntrutoresLD(String materia) {
         InstrutorRepository instrutorRepository = new InstrutorRepository(getApplication());
         CoroutineScope viewModelScope = ViewModelKt.getViewModelScope(this);
-        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository));
+        Pager<Integer, Instrutor> pager = new Pager(new PagingConfig(10), () -> new InstrutorPagingSource(instrutorRepository, materia));
         instrutorLd = PagingLiveData.cachedIn(PagingLiveData.getLiveData(pager), viewModelScope);
-    }
-    public LiveData<PagingData<Instrutor>> getPageLv() {
         return instrutorLd;
     }
-
-
 
     // Método para definir a opção de navegação selecionada
     public void setNavigationOpSelected(int navigationOpId) {

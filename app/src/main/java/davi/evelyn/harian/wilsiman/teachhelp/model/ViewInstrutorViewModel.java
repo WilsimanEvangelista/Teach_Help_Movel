@@ -19,13 +19,7 @@ public class ViewInstrutorViewModel extends AndroidViewModel {
         super(application);
     }
 
-    /**
-     * Método que cria e executa uma requisição ao servidor web para obter os detalhes de um produto
-     * na base de dados do servidor
-     * @param pid id do produto que se quer obter os detalhes
-     * @return um LiveData que vai conter a resposta do servidor quando esta estiver disponível
-     */
-    public LiveData<Instrutor> getProductDetailsLD(String pid) {
+    public LiveData<Instrutor> getInstrutorDetailsLD(String idAluno) {
 
         // Cria um container do tipo MutableLiveData (um LiveData que pode ter seu conteúdo alterado).
         MutableLiveData<Instrutor> productDetailLD = new MutableLiveData<>();
@@ -47,15 +41,15 @@ public class ViewInstrutorViewModel extends AndroidViewModel {
 
                 // Criamos uma instância de ProductsRepository. É dentro dessa classe que estão os
                 // métodos que se comunicam com o servidor web.
-               //InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
+               InstrutorRepository productsRepository = new InstrutorRepository(getApplication());
 
                 // O método loadProductDetail obtem os dados detalhados de um produto junto ao servidor.
                 // Ele retorna um objeto do tipo Product, que contém os dados detalhados do produto.
-               //Instrutor p = productsRepository.loadProfileDetails();
+               Instrutor p = productsRepository.loadInstrutorDetails(idAluno);
 
                 // Aqui postamos o resultado da operação dentro do LiveData. Quando fazemos isso,
                 // quem estiver observando o LiveData será avisado de que o resultado está disponível.
-               //productDetailLD.postValue(p);
+               productDetailLD.postValue(p);
             }
         });
 
